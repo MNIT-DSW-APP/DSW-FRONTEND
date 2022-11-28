@@ -1,0 +1,42 @@
+import 'package:dswapp/constants.dart';
+import 'package:dswapp/widgets/custom_appbar.dart';
+import 'package:dswapp/widgets/custom_black_button.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class ComplaintsControlScreen extends StatelessWidget {
+  const ComplaintsControlScreen({Key? key}) : super(key: key);
+  static const routeName = '/compalaints_control';
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: Scaffold(
+      appBar: const CustomAppBar(),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            CustomBlackButton(
+              title: "Unsoved Complaints",
+              icon: Icons.pending,
+              routename: "/",
+            ),
+            Text(
+              "OR",
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 17,
+              ),
+            ),
+            CustomBlackButton(
+              title: "Solved complaints",
+              icon: Icons.done,
+              routename: '/',
+            )
+          ]),
+    ));
+  }
+}
