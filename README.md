@@ -1,16 +1,11 @@
 # dswapp
+App designed for Dean Student's Welfare, MNIT Jaipur
 
-A new Flutter project.
+#Screenshots
+A. LANDING PAGE:
 
-## Getting Started
+1. <img src="https://user-images.githubusercontent.com/76738174/204370059-dfb7f59c-8bbe-41e7-b5f5-ccc89d967dab.jpg" height="550">2.  <img src="https://user-images.githubusercontent.com/76738174/204370074-df15ccd1-abc0-420a-b5f4-6a736509ab19.jpg" height="550">3.  <img src="https://user-images.githubusercontent.com/76738174/204370119-2a24210c-cba5-4863-bb9a-c71c558bb06d.jpg" height="550">4.  <img src="https://user-images.githubusercontent.com/76738174/204370135-03a68969-4051-4063-9a01-b3b0cbb79825.jpg" height="550">5.  <img src="https://user-images.githubusercontent.com/76738174/204370179-14207c19-cd0f-4248-b3ca-9b765b15a07b.jpg" height="550">
 
-This project is a starting point for a Flutter application.
+B. SIDE NAVIGATION BAR
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/76738174/204371955-5c8821b6-9c1c-4be2-8df4-79fdca73e730.jpg" height="550">
