@@ -1,14 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
-// import 'dart:html';
-import 'package:dswapp/constants.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/models/event.dart';
-import 'package:intl/intl.dart';
-import 'package:dswapp/models/lost_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
 class EventCard extends StatelessWidget {
@@ -19,9 +11,8 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
     return Container(
-      decoration: BoxDecoration(boxShadow: [
+      decoration: const BoxDecoration(boxShadow: [
         BoxShadow(
           color: Color.fromARGB(255, 245, 242, 242),
           blurRadius: 10,
@@ -34,15 +25,15 @@ class EventCard extends StatelessWidget {
           width: 400,
           height: 250,
           decoration: const RotatedCornerDecoration(
-            color: Color.fromRGBO(255, 214, 41, 1),
+            color: GlobalVariables.customYellow,
             geometry: BadgeGeometry(
               width: 40,
               height: 40,
               cornerRadius: 15,
             ),
           ),
-          foregroundDecoration: RotatedCornerDecoration(
-              color: Color.fromRGBO(49, 56, 66, 1),
+          foregroundDecoration: const RotatedCornerDecoration(
+              color: GlobalVariables.customGrey,
               geometry: BadgeGeometry(
                 height: 40,
                 width: 40,
@@ -55,8 +46,8 @@ class EventCard extends StatelessWidget {
                   top: 30, left: 25, right: 25, bottom: 25),
               child: Text(
                 item.title,
-                style: TextStyle(
-                  color: customGrey,
+                style: const TextStyle(
+                  color: GlobalVariables.customGrey,
                   fontSize: 17,
                   fontWeight: FontWeight.w400,
                   wordSpacing: 1.5,
@@ -65,21 +56,21 @@ class EventCard extends StatelessWidget {
                 overflow: TextOverflow.clip,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Text(
               "${item.startDate} to ${item.endDate}",
-              style: TextStyle(
-                color: customGrey,
+              style: const TextStyle(
+                color: GlobalVariables.customGrey,
                 fontSize: 14,
                 fontWeight: FontWeight.w200,
               ),
             ),
-            Spacer(),
-            Divider(),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8),
+            const Spacer(),
+            const Divider(),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 8),
               child: Text(
                 "View More",
                 style: TextStyle(

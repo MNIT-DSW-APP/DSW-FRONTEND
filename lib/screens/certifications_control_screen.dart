@@ -1,10 +1,6 @@
-import 'package:dswapp/constants.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/custom_black_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CertificationsControlScreen extends StatelessWidget {

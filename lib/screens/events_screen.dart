@@ -1,11 +1,10 @@
-import 'package:dswapp/constants.dart';
 import 'package:dswapp/models/event.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/event_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import '../constants/global_variables.dart';
 
 class EventsScreen extends StatelessWidget {
   const EventsScreen({Key? key}) : super(key: key);
@@ -15,10 +14,10 @@ class EventsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       endDrawer: NavigationDrawer(),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: 30, left: 30, right: 30),
+        padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
         child: Column(children: [
           Row(
             children: [
@@ -28,7 +27,7 @@ class EventsScreen extends StatelessWidget {
                     TextSpan(
                       text: "MNITJ ",
                       style: TextStyle(
-                        color: customGrey,
+                        color: GlobalVariables.customGrey,
                         fontSize: 37,
                         fontWeight: FontWeight.bold,
                       ),
@@ -36,7 +35,7 @@ class EventsScreen extends StatelessWidget {
                     TextSpan(
                       text: "Events",
                       style: TextStyle(
-                        color: customYellow,
+                        color: GlobalVariables.customYellow,
                         fontSize: 37,
                         fontWeight: FontWeight.bold,
                       ),
@@ -44,20 +43,20 @@ class EventsScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               const Icon(
                 Icons.search,
-                color: customYellow,
+                color: GlobalVariables.customYellow,
                 size: 35,
               ),
               const Icon(
                 Icons.filter_alt,
-                color: customYellow,
+                color: GlobalVariables.customYellow,
                 size: 35,
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           ListView.builder(

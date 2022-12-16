@@ -1,4 +1,4 @@
-import 'package:dswapp/constants.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/models/clubinfo.dart';
 import 'package:dswapp/screens/club_details_screen.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +46,8 @@ class ClubCard extends StatelessWidget {
               left: 16,
               child: Text(
                 item.title,
-                style: TextStyle(
-                  color: customYellow,
+                style: const TextStyle(
+                  color: GlobalVariables.customYellow,
                   fontSize: 23,
                 ),
               ),

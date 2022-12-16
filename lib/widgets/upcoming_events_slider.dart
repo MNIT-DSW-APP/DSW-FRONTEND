@@ -1,10 +1,10 @@
 import '../widgets/upcoming_events_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import '../models/upcoming_events.dart';
 
 class UpcomingEventsSlider extends StatelessWidget {
+  const UpcomingEventsSlider({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -20,12 +20,3 @@ class UpcomingEventsSlider extends StatelessWidget {
     );
   }
 }
-
-// final listttt = ListView.builder(
-//   physics: NeverScrollableScrollPhysics(),
-//   shrinkWrap: true,
-//   itemBuilder: ((context, index) {
-//     return UpcomingEventsCard(event: items[index]);
-//   }),
-//   itemCount: items.length,
-// );

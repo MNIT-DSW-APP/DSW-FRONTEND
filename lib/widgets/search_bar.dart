@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({Key? key}) : super(key: key);
@@ -9,7 +7,7 @@ class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 12,
       ),
       width: sz.width - 50,
@@ -24,8 +22,8 @@ class SearchBar extends StatelessWidget {
         child: TextField(
           decoration: InputDecoration(
             suffixIcon: IconButton(
-              icon: Icon(Icons.arrow_circle_right_sharp),
-              color: Color.fromRGBO(255, 214, 41, 1),
+              icon: const Icon(Icons.arrow_circle_right_sharp),
+              color: GlobalVariables.customYellow,
               onPressed: (() {}),
             ),
             hintText: "query/complaint",

@@ -9,13 +9,11 @@ import 'package:dswapp/widgets/magzine_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:dswapp/widgets/tasks_card.dart';
 import 'package:flutter/material.dart';
+import '../constants/global_variables.dart';
 import '../widgets/upcoming_events_slider.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class LandingScreen extends StatelessWidget {
-  LandingScreen({Key? key}) : super(key: key);
+  const LandingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +31,7 @@ class LandingScreen extends StatelessWidget {
                 height: 40,
                 width: MediaQuery.of(context).size.width,
                 child: DecoratedBox(
-                  decoration:
-                      BoxDecoration(color: Color.fromRGBO(49, 56, 66, 1)),
+                  decoration: BoxDecoration(color: GlobalVariables.customGrey),
                 ),
               ),
               UpcomingEventsSlider(),
@@ -51,7 +48,7 @@ class LandingScreen extends StatelessWidget {
                     TextSpan(
                         text: "Welfare",
                         style: TextStyle(
-                          color: Color.fromRGBO(246, 201, 14, 1),
+                          color: GlobalVariables.customYellow,
                         ))
                   ],
                 ),

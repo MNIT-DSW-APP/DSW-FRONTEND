@@ -1,12 +1,9 @@
-import 'package:dswapp/constants.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/models/clubinfo.dart';
 import 'package:dswapp/widgets/club_card.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 class AboutSocieties extends StatelessWidget {
@@ -21,7 +18,7 @@ class AboutSocieties extends StatelessWidget {
         appBar: const CustomAppBar(),
         endDrawer: NavigationDrawer(),
         body: SingleChildScrollView(
-          padding: EdgeInsets.only(top: 30, left: 30, right: 30),
+          padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 15),
@@ -33,7 +30,7 @@ class AboutSocieties extends StatelessWidget {
                         TextSpan(
                           text: "About ",
                           style: TextStyle(
-                            color: customGrey,
+                            color: GlobalVariables.customGrey,
                             fontSize: 37,
                             fontWeight: FontWeight.bold,
                           ),
@@ -41,7 +38,7 @@ class AboutSocieties extends StatelessWidget {
                         TextSpan(
                           text: "Societies",
                           style: TextStyle(
-                            color: customYellow,
+                            color: GlobalVariables.customYellow,
                             fontSize: 37,
                             fontWeight: FontWeight.bold,
                           ),
@@ -49,10 +46,10 @@ class AboutSocieties extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   const Icon(
                     Icons.search,
-                    color: customYellow,
+                    color: GlobalVariables.customYellow,
                     size: 35,
                   ),
                 ],

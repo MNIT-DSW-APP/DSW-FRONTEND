@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -25,6 +26,7 @@ class Intro extends StatelessWidget {
         ),
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "Dean Student's Welfare",
@@ -54,7 +56,7 @@ class Intro extends StatelessWidget {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                primary: Color.fromRGBO(246, 201, 14, 1),
+                primary: GlobalVariables.customYellow,
                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
             onPressed: () {},
             child: Text(
@@ -63,7 +65,6 @@ class Intro extends StatelessWidget {
             ),
           ),
         ],
-        mainAxisAlignment: MainAxisAlignment.center,
       ),
     );
   }

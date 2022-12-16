@@ -1,17 +1,11 @@
-import 'package:dswapp/constants.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/models/clubinfo.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
 class clubDetailsScreen extends StatefulWidget {
-  // final Club item;
-
-  // const clubDetailsScreen({super.key, required this.item});
   static const routeName = "/club_details";
 
   @override
@@ -70,7 +64,7 @@ class _clubDetailsScreenState extends State<clubDetailsScreen> {
                         const Text(
                           "Notifications of this club",
                           style: TextStyle(
-                            color: customGrey,
+                            color: GlobalVariables.customGrey,
                             fontSize: 16,
                           ),
                           textAlign: TextAlign.right,
@@ -132,7 +126,7 @@ class ExpansionTitle extends StatelessWidget {
       height: 55,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: customGrey,
+        color: GlobalVariables.customGrey,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Text(
@@ -183,7 +177,7 @@ class announcementsCard extends StatelessWidget {
               child: const Text(
                 "Announcements",
                 style: TextStyle(
-                  color: customGrey,
+                  color: GlobalVariables.customGrey,
                   fontSize: 26,
                 ),
               ),
@@ -208,7 +202,8 @@ Widget announcementBuilder(txt) {
       children: [
         Text(
           txt,
-          style: const TextStyle(color: customGrey, fontSize: 14),
+          style:
+              const TextStyle(color: GlobalVariables.customGrey, fontSize: 14),
           textAlign: TextAlign.justify,
           overflow: TextOverflow.clip,
         ),
@@ -265,7 +260,8 @@ Widget upcomingEventsBuilder(txt) {
       children: [
         Text(
           txt,
-          style: const TextStyle(color: customGrey, fontSize: 14),
+          style:
+              const TextStyle(color: GlobalVariables.customGrey, fontSize: 14),
           textAlign: TextAlign.justify,
           overflow: TextOverflow.clip,
         ),

@@ -13,7 +13,6 @@ import 'package:dswapp/screens/login_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
-import 'package:dswapp/widgets/magzine_card.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,6 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: GlobalVariables.customGrey,
         accentColor: GlobalVariables.customYellow,
+        fontFamily: 'Lato',
         dividerTheme: const DividerThemeData(
           color: Color.fromRGBO(167, 167, 167, 1),
           space: 35,

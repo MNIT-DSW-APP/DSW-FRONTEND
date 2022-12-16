@@ -1,24 +1,21 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/widgets/search_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
   Footer({Key? key}) : super(key: key);
 
-  final Color yel = Color.fromRGBO(255, 214, 41, 1);
+  final Color yel = GlobalVariables.customYellow;
 
   @override
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(49, 56, 66, 1),
+        color: GlobalVariables.customGrey,
       ),
       height: sz.height - 40,
       width: sz.width,
@@ -28,9 +25,9 @@ class Footer extends StatelessWidget {
             height: 66,
           ),
           Container(
-            child: Image.asset("lib/assets/images/Mnit_logo.png"),
             height: 99,
             width: 99,
+            child: Image.asset("lib/assets/images/Mnit_logo.png"),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 20, left: 15, right: 15),

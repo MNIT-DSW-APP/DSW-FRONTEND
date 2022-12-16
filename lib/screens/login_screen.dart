@@ -1,12 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:dswapp/constants.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key}) : super(key: key);
@@ -25,21 +20,21 @@ Widget buildEmail() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           "Email:",
-          style: TextStyle(color: customGrey, fontSize: 20),
+          style: TextStyle(color: GlobalVariables.customGrey, fontSize: 20),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
-            color: Color.fromRGBO(49, 56, 66, 0.2),
+            color: const Color.fromRGBO(49, 56, 66, 0.2),
             borderRadius: BorderRadius.circular(10),
           ),
           height: 60,
-          child: TextField(
+          child: const TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -68,21 +63,21 @@ Widget buildPassword() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           "Password:",
-          style: TextStyle(color: customGrey, fontSize: 20),
+          style: TextStyle(color: GlobalVariables.customGrey, fontSize: 20),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
-            color: Color.fromRGBO(49, 56, 66, 0.2),
+            color: const Color.fromRGBO(49, 56, 66, 0.2),
             borderRadius: BorderRadius.circular(10),
           ),
           height: 60,
-          child: TextField(
+          child: const TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -108,7 +103,7 @@ class _LogInScreenState extends State<LogInScreen> {
     Size sz = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       endDrawer: NavigationDrawer(),
       body: Container(
         height: sz.height,
@@ -117,8 +112,8 @@ class _LogInScreenState extends State<LogInScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           color: Colors.white,
-          boxShadow: [
-            const BoxShadow(
+          boxShadow: const [
+            BoxShadow(
               blurRadius: 3.0,
               color: Color.fromARGB(172, 158, 158, 158),
             ),
@@ -127,7 +122,7 @@ class _LogInScreenState extends State<LogInScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 24,
                 vertical: 10,
@@ -135,39 +130,33 @@ class _LogInScreenState extends State<LogInScreen> {
               child: Text(
                 "Welcome Back!",
                 style: TextStyle(
-                    color: customGrey,
+                    color: GlobalVariables.customGrey,
                     fontSize: 32,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             buildEmail(),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             buildPassword(),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
               child: Text(
                 "Forgot / Reset Password?",
-                style: TextStyle(color: customGrey, fontSize: 15),
+                style:
+                    TextStyle(color: GlobalVariables.customGrey, fontSize: 15),
               ),
             ),
-            Divider(),
-            // Padding(
-            //   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-            //   child: Text(
-            //     "Enter Security No. in the box below -",
-            //     style: TextStyle(color: customGrey, fontSize: 16),
-            //   ),
-            // ),
+            const Divider(),
             ElevatedButton(
               onPressed: (() {}),
               style: ElevatedButton.styleFrom(
-                  primary: customYellow,
-                  padding: EdgeInsets.symmetric(
+                  primary: GlobalVariables.customYellow,
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 75,
                     vertical: 10,
                   )),

@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 // import 'dart:html';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:intl/intl.dart';
 import 'package:dswapp/models/lost_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
 class LostCard extends StatelessWidget {
@@ -17,9 +15,8 @@ class LostCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
     return Container(
-      decoration: BoxDecoration(boxShadow: [
+      decoration: BoxDecoration(boxShadow: const [
         BoxShadow(
           color: Color.fromARGB(255, 245, 242, 242),
           blurRadius: 5,
@@ -32,7 +29,7 @@ class LostCard extends StatelessWidget {
           width: 380,
           height: 250,
           decoration: const RotatedCornerDecoration(
-            color: Color.fromRGBO(255, 214, 41, 1),
+            color: GlobalVariables.customYellow,
             geometry: BadgeGeometry(
               width: 35,
               height: 35,
@@ -40,7 +37,7 @@ class LostCard extends StatelessWidget {
             ),
           ),
           foregroundDecoration: RotatedCornerDecoration(
-              color: Color.fromRGBO(49, 56, 66, 1),
+              color: GlobalVariables.customGrey,
               geometry: BadgeGeometry(
                 height: 35,
                 width: 35,
@@ -79,13 +76,13 @@ class LostCard extends StatelessWidget {
               Positioned(
                 top: 90,
                 left: 164,
-                child: Container(
+                child: SizedBox(
                   height: 118,
                   width: 201,
                   child: Text(
                     item.description,
                     style: TextStyle(
-                      color: Color.fromRGBO(47, 71, 81, 1),
+                      color: GlobalVariables.customGrey,
                       fontSize: 13,
                       wordSpacing: 5.0,
                       height: 1.8,
@@ -100,7 +97,7 @@ class LostCard extends StatelessWidget {
                 child: Text(
                   DateFormat('EEEEE', 'en_us').format(item.dt),
                   style: TextStyle(
-                    color: Color.fromRGBO(49, 56, 66, 1),
+                    color: GlobalVariables.customGrey,
                     fontSize: 15,
                   ),
                 ),

@@ -1,9 +1,7 @@
-import 'package:dswapp/constants.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import '../constants/global_variables.dart';
 
 class HostEventScreen extends StatefulWidget {
   const HostEventScreen({Key? key}) : super(key: key);
@@ -71,21 +69,21 @@ class _HostEventScreenState extends State<HostEventScreen> {
                       width: 1,
                     ),
                   ),
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     top: 10,
                     right: 10,
                   ),
                   child: _imageEditingController.text.isEmpty
-                      ? Text("Enetr a URL")
+                      ? const Text("Enetr a URL")
                       : FittedBox(
-                          child: Image.network(_imageEditingController.text),
                           fit: BoxFit.cover,
+                          child: Image.network(_imageEditingController.text),
                         ),
                 ),
                 Expanded(
                   child: TextFormField(
-                    decoration: InputDecoration(
-                      label: Text("Image Upload"),
+                    decoration: const InputDecoration(
+                      label: const Text("Image Upload"),
                     ),
                     keyboardType: TextInputType.url,
                     textInputAction: TextInputAction.done,
@@ -97,24 +95,24 @@ class _HostEventScreenState extends State<HostEventScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Select start date of event",
-              style: TextStyle(
-                color: customGrey,
+              style: const TextStyle(
+                color: GlobalVariables.customGrey,
                 fontSize: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  child: Text("Select date"),
+                  child: const Text("Select date"),
                   onPressed: () async {
                     DateTime? newdate = await showDatePicker(
                       context: context,
@@ -130,36 +128,36 @@ class _HostEventScreenState extends State<HostEventScreen> {
                       });
                   },
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
+                  height: 30,
+                  width: 150,
                   child: Text(
                     '${dt.day}/${dt.month}/${dt.year}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  height: 30,
-                  width: 150,
                 ),
               ],
             ),
-            Text(
+            const Text(
               "Select End date of event",
               style: TextStyle(
-                color: customGrey,
+                color: GlobalVariables.customGrey,
                 fontSize: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  child: Text("Select date"),
+                  child: const Text("Select date"),
                   onPressed: () async {
                     DateTime? newdate = await showDatePicker(
                       context: context,
@@ -169,42 +167,43 @@ class _HostEventScreenState extends State<HostEventScreen> {
                     );
                     if (newdate == null)
                       return;
-                    else
+                    else {
                       setState(() {
                         dt = newdate;
                       });
+                    }
                   },
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
+                  height: 30,
+                  width: 150,
                   child: Text(
                     '${dt.day}/${dt.month}/${dt.year}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  height: 30,
-                  width: 150,
                 ),
               ],
             ),
-            Text(
+            const Text(
               "Select End date of Registration",
               style: TextStyle(
-                color: customGrey,
+                color: GlobalVariables.customGrey,
                 fontSize: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  child: Text("Select date"),
+                  child: const Text("Select date"),
                   onPressed: () async {
                     DateTime? newdate = await showDatePicker(
                       context: context,
@@ -220,23 +219,23 @@ class _HostEventScreenState extends State<HostEventScreen> {
                       });
                   },
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
+                  height: 30,
+                  width: 150,
                   child: Text(
                     '${dt.day}/${dt.month}/${dt.year}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  height: 30,
-                  width: 150,
                 ),
               ],
             ),
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Registration Link",
               ),
               keyboardType: TextInputType.url,

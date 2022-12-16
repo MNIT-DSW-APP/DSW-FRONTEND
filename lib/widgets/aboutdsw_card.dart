@@ -1,14 +1,5 @@
-// ignore_for_file: prefer_const_constructors
-
-// import 'dart:html';
-import 'dart:io';
-
-import 'package:intl/intl.dart';
-import 'package:dswapp/models/lost_item.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
 class AboutDSWCArd extends StatelessWidget {
@@ -24,11 +15,11 @@ class AboutDSWCArd extends StatelessWidget {
         width: 380,
         height: 440,
         decoration: const RotatedCornerDecoration(
-          color: Color.fromRGBO(255, 214, 41, 1),
+          color: GlobalVariables.customYellow,
           geometry: BadgeGeometry(width: 60, height: 60),
         ),
-        foregroundDecoration: RotatedCornerDecoration(
-            color: Color.fromRGBO(49, 56, 66, 1),
+        foregroundDecoration: const RotatedCornerDecoration(
+            color: GlobalVariables.customGrey,
             geometry: BadgeGeometry(
               height: 60,
               width: 60,
@@ -36,14 +27,14 @@ class AboutDSWCArd extends StatelessWidget {
             )),
         child: Stack(
           children: [
-            Positioned(
+            const Positioned(
               top: 25,
               left: 30,
               // right: 20,
               child: Text(
                 "About DSW",
                 style: TextStyle(
-                  color: Color.fromRGBO(49, 56, 66, 1),
+                  color: GlobalVariables.customGrey,
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -52,12 +43,12 @@ class AboutDSWCArd extends StatelessWidget {
             Positioned(
               top: 84,
               left: 30,
-              child: Container(
+              child: SizedBox(
                 height: 320,
                 width: 297,
                 child: Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color.fromARGB(255, 83, 108, 119),
                     fontSize: 17,
                     wordSpacing: 1.5,

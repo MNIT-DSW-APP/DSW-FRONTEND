@@ -1,15 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/models/upcoming_events.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class UpcomingEventsCard extends StatelessWidget {
   final UpcomingEvents event;
 
-  UpcomingEventsCard({super.key, required this.event});
+  const UpcomingEventsCard({super.key, required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +17,9 @@ class UpcomingEventsCard extends StatelessWidget {
       margin: EdgeInsets.only(left: 15, top: 15, bottom: 15),
       child: Column(children: [
         ClipRRect(
-          child: Image.asset("lib/assets/images/carousel_image1.png"),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+          child: Image.asset("lib/assets/images/carousel_image1.png"),
         ),
         Container(
           padding: EdgeInsets.all(5),
@@ -43,7 +41,7 @@ class UpcomingEventsCard extends StatelessWidget {
               child: Text(
                 event.date,
                 style: TextStyle(
-                  color: Color.fromRGBO(49, 56, 66, 1),
+                  color: GlobalVariables.customGrey,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
@@ -55,7 +53,7 @@ class UpcomingEventsCard extends StatelessWidget {
               child: Text(
                 event.title,
                 style: TextStyle(
-                  color: Color.fromRGBO(49, 56, 66, 1),
+                  color: GlobalVariables.customGrey,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),

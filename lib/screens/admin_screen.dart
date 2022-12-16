@@ -3,8 +3,6 @@ import 'package:dswapp/models/user.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/custom_black_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AdminScreen extends StatelessWidget {
   static const routeName = '/admin_panel';
@@ -70,7 +68,7 @@ class AdminScreen extends StatelessWidget {
                       left: 280,
                       top: 60,
                       child: Row(
-                        children: [
+                        children: const [
                           Icon(
                             Icons.edit,
                             color: Colors.grey,

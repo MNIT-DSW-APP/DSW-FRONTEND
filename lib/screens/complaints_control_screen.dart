@@ -1,10 +1,6 @@
-import 'package:dswapp/constants.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/custom_black_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ComplaintsControlScreen extends StatelessWidget {
   const ComplaintsControlScreen({Key? key}) : super(key: key);
