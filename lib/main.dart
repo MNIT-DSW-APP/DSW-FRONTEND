@@ -1,3 +1,4 @@
+import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/admin_screen.dart';
 import 'package:dswapp/screens/announcements_control_screen.dart';
@@ -28,8 +29,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'DSW App',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(49, 56, 66, 1),
-        accentColor: Color.fromRGBO(246, 201, 14, 1),
+        primaryColor: GlobalVariables.customGrey,
+        accentColor: GlobalVariables.customYellow,
         dividerTheme: const DividerThemeData(
           color: Color.fromRGBO(167, 167, 167, 1),
           space: 35,
