@@ -2,6 +2,7 @@ import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/events_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
+import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,14 +15,14 @@ class NavigationDrawer extends StatelessWidget {
     ["Campus", '/'],
     ["Lost & Found", LostAndFoundScreen.routeName],
     ["FAQs", "/"],
-    ["Notifications", "/"],
+    ["Notifications", NotificationsScreen.routeName],
     ["Login", PanelScreen.routeName],
   ];
   Widget buildListTile(String tileTitle, VoidCallback tapHandler) {
     return ListTile(
       title: Column(
         children: [
-          FlatButton(
+          TextButton(
             onPressed: tapHandler,
             child: Text(
               tileTitle,
@@ -50,7 +51,7 @@ class NavigationDrawer extends StatelessWidget {
               color: GlobalVariables.navBarCol,
               child: Row(
                 children: [
-                  FlatButton(
+                  TextButton(
                     onPressed: () => {Navigator.of(context).pop()},
                     child: const Icon(Icons.close),
                   )
