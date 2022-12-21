@@ -14,6 +14,7 @@ import 'package:dswapp/screens/lost_and_found_screen.dart';
 import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
+import 'package:dswapp/screens/question_answer_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         HostEventScreen.routeName: (context) => HostEventScreen(),
         AdminScreen.routeName: (context) => AdminScreen(),
         NotificationsScreen.routeName: ((context) => NotificationsScreen()),
+        QuestionsScreen.routeName: ((context) => QuestionsScreen()),
       },
     );
   }
