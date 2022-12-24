@@ -1,4 +1,5 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/events_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
@@ -11,7 +12,7 @@ import '../screens/question_answer_screen.dart';
 class NavigationDrawer extends StatelessWidget {
   final List<List> drawerItems = [
     ["Home", '/'],
-    ["About DSW", '/'],
+    ["About DSW", AboutDSWScreen.routeName],
     ["Societies", AboutSocieties.routeName],
     ["Events", EventsScreen.routeName],
     ["Campus", '/'],
