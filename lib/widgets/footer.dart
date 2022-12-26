@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
       decoration: BoxDecoration(
         color: GlobalVariables.customGrey,
       ),
-      height: sz.height - 40,
+      height: sz.height + 35,
       width: sz.width,
       child: Column(
         children: [
