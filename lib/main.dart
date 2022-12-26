@@ -2,6 +2,7 @@ import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/admin_screen.dart';
 import 'package:dswapp/screens/announcements_control_screen.dart';
+import 'package:dswapp/screens/campus_screen.dart';
 import 'package:dswapp/screens/certifications_control_screen.dart';
 import 'package:dswapp/screens/club_details_screen.dart';
 import 'package:dswapp/screens/complaints_control_screen.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         AdminScreen.routeName: (context) => AdminScreen(),
         NotificationsScreen.routeName: ((context) => NotificationsScreen()),
         QuestionsScreen.routeName: ((context) => QuestionsScreen()),
+        CampusScreen.routeName: ((context) => CampusScreen()),
       },
     );
   }
