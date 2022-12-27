@@ -135,7 +135,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                                 border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)),
-                                )),
+                                ),
+                            ),
                             validator: (questionFromInput) {
                               if (questionFromInput!.isEmpty) {
                                 return "Can't be Empty.";

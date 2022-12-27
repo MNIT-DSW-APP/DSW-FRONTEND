@@ -22,8 +22,8 @@ class TasksCard extends StatelessWidget {
     return Card(
       margin: EdgeInsets.all(width * 0.05),
       child: Container(
-        width: 380,
-        height: 700,
+        width: 370,
+        height: 650,
         decoration: const RotatedCornerDecoration(
           color: GlobalVariables.customYellow,
           geometry: BadgeGeometry(width: 60, height: 60),
@@ -60,6 +60,7 @@ class TasksCard extends StatelessWidget {
                 height: 513,
                 width: 331,
                 child: ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
                   itemBuilder: ((context, index) {
                     return Text(
                       description[index],

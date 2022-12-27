@@ -1,20 +1,21 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/events_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
 import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../screens/question_answer_screen.dart';
+import 'package:dswapp/screens/campus_screen.dart';
+import 'package:dswapp/screens/question_answer_screen.dart';
 
 class NavigationDrawer extends StatelessWidget {
   final List<List> drawerItems = [
     ["Home", '/'],
-    ["About DSW", '/'],
+    ["About DSW", AboutDSWScreen.routeName],
     ["Societies", AboutSocieties.routeName],
     ["Events", EventsScreen.routeName],
-    ["Campus", '/'],
+    ["Campus", CampusScreen.routeName],
     ["Lost & Found", LostAndFoundScreen.routeName],
     ["FAQs", QuestionsScreen.routeName],
     ["Notifications", NotificationsScreen.routeName],

@@ -35,11 +35,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.1.1
+  carousel_pro: ^1.0.0
   rotated_corner_decoration: ^2.0.0
   intl: ^0.17.0
   font_awesome_flutter: ^10.2.1
   url_launcher: ^6.1.7
   flutter_lorem: ^2.0.0
+  youtube_player_flutter: ^8.1.1
   provider: ^6.0.5
 
 dev_dependencies:
@@ -76,6 +78,22 @@ flutter:
     - lib/assets/images/emc2.png
     - lib/assets/images/think_india.png
     - lib/assets/images/user.jpg
+    - lib/assets/images/faqs.jpg
+    - lib/assets/images/apartments_cl.jpg
+    - lib/assets/images/canteen_cl.jpg
+    - lib/assets/images/ganga_cl.jpg
+    - lib/assets/images/miic_cl.jpg
+    - lib/assets/images/prabha_cl.jpg
+    - lib/assets/images/vltc1_cl.jpg
+    - lib/assets/images/bank_screen.jpg
+    - lib/assets/images/canteen_screen.jpg
+    - lib/assets/images/digital_infrastructure_screen.jpg
+    - lib/assets/images/guest_house_screen.jpg
+    - lib/assets/images/library_screen.jpg
+    - lib/assets/images/medical_facilities_screen.jpg
+    - lib/assets/images/post_office_screen.png
+    - lib/assets/images/shopping_complex_screen.jpg
+    - lib/assets/images/sports_screen.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -55,6 +55,7 @@ class AboutSocieties extends StatelessWidget {
                 ],
               ),
             ),
+
             Container(
               height: 250,
               width: sz.width,

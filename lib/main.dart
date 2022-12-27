@@ -1,11 +1,13 @@
 import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/providers/complaint_providers.dart';
+import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/admin/complaint_detail_screen.dart';
 import 'package:dswapp/screens/admin/complaint_screen.dart';
 import 'package:dswapp/screens/admin/resolve_complaint_screen.dart';
 import 'package:dswapp/screens/admin_screen.dart';
 import 'package:dswapp/screens/announcements_control_screen.dart';
+import 'package:dswapp/screens/campus_screen.dart';
 import 'package:dswapp/screens/certifications_control_screen.dart';
 import 'package:dswapp/screens/club_details_screen.dart';
 import 'package:dswapp/screens/complaints_control_screen.dart';
