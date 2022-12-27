@@ -1,7 +1,4 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
-
-
-import 'package:carousel_pro/carousel_pro.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
@@ -18,10 +15,29 @@ class CampusScreen extends StatefulWidget {
 }
 
 class _CampusScreenState extends State<CampusScreen> {
+  final List<String> campusImages = [
+    'lib/assets/images/prabha_cl.jpg',
+    'lib/assets/images/vltc1_cl.jpg',
+    'lib/assets/images/ganga_cl.jpg',
+    'lib/assets/images/miic_cl.jpg',
+    'lib/assets/images/canteen_cl.jpg',
+    'lib/assets/images/apartments_cl.jpg',
+  ];
 
-  final videoURL = "https://www.youtube.com/watch?v=57Y_92nGfC8&ab_channel=WebmasterMNIT";
+  List<Widget> generateImagesTiles() {
+    return campusImages
+        .map((element) => ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              element,
+              fit: BoxFit.cover,
+            )))
+        .toList();
+  }
+
+  final videoURL =
+      "https://www.youtube.com/watch?v=57Y_92nGfC8&ab_channel=WebmasterMNIT";
   late YoutubePlayerController _controller;
-
 
   @override
   void initState() {
@@ -29,31 +45,29 @@ class _CampusScreenState extends State<CampusScreen> {
     _controller = YoutubePlayerController(
       initialVideoId: videoID!,
       flags: const YoutubePlayerFlags(
-          hideControls : false,
-          controlsVisibleAtStart : false,
-          autoPlay : false,
-          mute : false,
-          isLive : false,
-          hideThumbnail : false,
-          disableDragSeek : false,
-          enableCaption : true,
-          captionLanguage: "en ",
-          loop : false,
-          useHybridComposition : false,
-          forceHD : true,
-          showLiveFullscreenButton : false,
+        hideControls: false,
+        controlsVisibleAtStart: false,
+        autoPlay: false,
+        mute: false,
+        isLive: false,
+        hideThumbnail: false,
+        disableDragSeek: false,
+        enableCaption: true,
+        captionLanguage: "en ",
+        loop: false,
+        useHybridComposition: false,
+        forceHD: true,
+        showLiveFullscreenButton: false,
       ),
     );
     super.initState();
   }
-
 
   @override
   void deactivate() {
     _controller.pause();
     super.deactivate();
   }
-
 
   @override
   void dispose() {
@@ -105,57 +119,43 @@ class _CampusScreenState extends State<CampusScreen> {
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(1.0),
-                child: SizedBox(
-                  height: 200,
-                  width: double.infinity,
-                  child: Carousel(
-                    dotSize: 5.0,
-                    dotSpacing: 13.0,
-                    dotColor: Colors.yellow,
-                    dotBgColor: Colors.transparent,
-                    images: [
-                      Image.asset("lib/assets/images/prabha_cl.jpg",
-                          fit: BoxFit.cover),
-                      Image.asset("lib/assets/images/vltc1_cl.jpg",
-                          fit: BoxFit.cover),
-                      Image.asset("lib/assets/images/ganga_cl.jpg",
-                          fit: BoxFit.cover),
-                      Image.asset("lib/assets/images/miic_cl.jpg",
-                          fit: BoxFit.cover),
-                      Image.asset("lib/assets/images/canteen_cl.jpg",
-                          fit: BoxFit.cover),
-                      Image.asset("lib/assets/images/apartments_cl.jpg",
-                          fit: BoxFit.cover),
-                    ],
-                  ),
+                child: Stack(
+                  children: [
+                    CarouselSlider(
+                        items: generateImagesTiles(),
+                        options: CarouselOptions(
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          autoPlayInterval: const Duration(seconds: 2),
+                        )),
+                  ],
                 ),
               ),
             ),
-
 
             const Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: Divider(),
             ),
-
             const AboutCampusCard(),
-
             const Padding(
               padding: EdgeInsets.only(top: 0.0),
               child: Divider(),
             ),
-
-            const Text("Made Life Easy",
-              style: TextStyle( fontSize: 13, fontWeight: FontWeight.w100),
+            const Text(
+              "Made Life Easy",
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w100),
             ),
-
             const Padding(
               padding: EdgeInsets.only(bottom: 20.0),
-              child: Text("FOR STUDENTS",
-                style: TextStyle( fontSize: 25, fontWeight: FontWeight.bold, color: Colors.grey),
+              child: Text(
+                "FOR STUDENTS",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
               ),
             ),
-
             Column(
               children: [
                 Row(
@@ -220,8 +220,6 @@ class _CampusScreenState extends State<CampusScreen> {
                     ),
                   ],
                 ),
-
-
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
                   child: Row(
@@ -288,8 +286,6 @@ class _CampusScreenState extends State<CampusScreen> {
                     ],
                   ),
                 ),
-
-
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0),
                   child: Row(
@@ -358,38 +354,37 @@ class _CampusScreenState extends State<CampusScreen> {
                 ),
               ],
             ),
-
             const Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: Divider(),
             ),
-
-            const Text("From Campus",
-              style: TextStyle( fontSize: 13, fontWeight: FontWeight.w100),
+            const Text(
+              "From Campus",
+              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w100),
             ),
-
-            const Text("LATEST CAMPUS TOUR",
-              style: TextStyle( fontSize: 25, fontWeight: FontWeight.bold, color: Colors.grey),
+            const Text(
+              "LATEST CAMPUS TOUR",
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey),
             ),
-
             Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                YoutubePlayer(controller: _controller,
-                  showVideoProgressIndicator: true,
-                  bottomActions: [
-                    const PlaybackSpeedButton(),
-                    CurrentPosition(),
-                    ProgressBar(
-                      isExpanded: true,
-                    ),
-                  ],
-                ),
-              ]
-            ),
-
-
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  YoutubePlayer(
+                    controller: _controller,
+                    showVideoProgressIndicator: true,
+                    bottomActions: [
+                      const PlaybackSpeedButton(),
+                      CurrentPosition(),
+                      ProgressBar(
+                        isExpanded: true,
+                      ),
+                    ],
+                  ),
+                ]),
           ]),
         ),
       ),
