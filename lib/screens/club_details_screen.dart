@@ -104,7 +104,7 @@ class _clubDetailsScreenState extends State<clubDetailsScreen> {
                     height: 20,
                   ),
                   ExpansionTile(
-                    title: ExpansionTitle(
+                    title: const ExpansionTitle(
                       title: "Concluded Events",
                     ),
                     children: [UpcomingEventsCard(sz: sz, item: item)],
@@ -161,8 +161,8 @@ class announcementsCard extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              const BoxShadow(
+            boxShadow: const [
+              BoxShadow(
                 color: Colors.grey,
                 blurRadius: 10,
               )
@@ -174,7 +174,7 @@ class announcementsCard extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                 vertical: 15,
               ),
-              child: const Text(
+              child: Text(
                 "Announcements",
                 style: TextStyle(
                   color: GlobalVariables.customGrey,
@@ -231,8 +231,8 @@ class UpcomingEventsCard extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              const BoxShadow(
+            boxShadow: const [
+              BoxShadow(
                 color: Colors.grey,
                 blurRadius: 10,
               )

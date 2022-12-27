@@ -1,6 +1,10 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/providers/complaint_providers.dart';
 import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
+import 'package:dswapp/screens/admin/complaint_detail_screen.dart';
+import 'package:dswapp/screens/admin/complaint_screen.dart';
+import 'package:dswapp/screens/admin/resolve_complaint_screen.dart';
 import 'package:dswapp/screens/admin_screen.dart';
 import 'package:dswapp/screens/announcements_control_screen.dart';
 import 'package:dswapp/screens/campus_screen.dart';
@@ -18,6 +22,7 @@ import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
 import 'package:dswapp/screens/question_answer_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,44 +33,52 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'DSW App',
-      theme: ThemeData(
-        primaryColor: GlobalVariables.customGrey,
-        accentColor: GlobalVariables.customYellow,
-        fontFamily: 'Lato',
-        dividerTheme: const DividerThemeData(
-          color: Color.fromRGBO(167, 167, 167, 1),
-          space: 35,
-          indent: 40,
-          endIndent: 50,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ComplaintProvider>(
+          create: (_) => ComplaintProvider(),
         ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'DSW App',
+        theme: ThemeData(
+          primaryColor: GlobalVariables.customGrey,
+          accentColor: GlobalVariables.customYellow,
+          fontFamily: 'Lato',
+          dividerTheme: const DividerThemeData(
+            color: Color.fromRGBO(167, 167, 167, 1),
+            space: 35,
+            indent: 40,
+            endIndent: 50,
+          ),
+        ),
+        home: LandingScreen(),
+        routes: {
+          PanelScreen.routeName: (context) => PanelScreen(),
+          LostAndFoundScreen.routeName: (context) => LostAndFoundScreen(),
+          LogInScreen.routeName: (context) => LogInScreen(),
+          AboutSocieties.routeName: (context) => AboutSocieties(),
+          clubDetailsScreen.routeName: ((context) => clubDetailsScreen()),
+          EventsScreen.routeName: (context) => EventsScreen(),
+          EventsControlScreen.routeName: ((context) => EventsControlScreen()),
+          ComplaintsControlScreen.routeName: (context) =>
+              ComplaintsControlScreen(),
+          CertificationsControlScreen.routeName: (context) =>
+              CertificationsControlScreen(),
+          PointsControlScreen.routeName: ((context) => PointsControlScreen()),
+          AnnouncementsControlScreen.routeName: (context) =>
+              AnnouncementsControlScreen(),
+          HostEventScreen.routeName: (context) => HostEventScreen(),
+          AdminScreen.routeName: (context) => AdminScreen(),
+          NotificationsScreen.routeName: ((context) => NotificationsScreen()),
+          QuestionsScreen.routeName: ((context) => QuestionsScreen()),
+          ComplaintsScreen.routeName: (context) => ComplaintsScreen(),
+          ComplaintDetailScreen.routeName: (context) => ComplaintDetailScreen(),
+          ResolveComplaintScreen.routeName: (context) =>
+              ResolveComplaintScreen(),
+        },
       ),
-      home: LandingScreen(),
-      routes: {
-        PanelScreen.routeName: (context) => PanelScreen(),
-        LostAndFoundScreen.routeName: (context) => LostAndFoundScreen(),
-        LogInScreen.routeName: (context) => LogInScreen(),
-        AboutSocieties.routeName: (context) => AboutSocieties(),
-        clubDetailsScreen.routeName: ((context) => clubDetailsScreen()),
-        EventsScreen.routeName: (context) => EventsScreen(),
-        EventsControlScreen.routeName: ((context) => EventsControlScreen()),
-        ComplaintsControlScreen.routeName: (context) =>
-            ComplaintsControlScreen(),
-        CertificationsControlScreen.routeName: (context) =>
-            CertificationsControlScreen(),
-        PointsControlScreen.routeName: ((context) => PointsControlScreen()),
-        AnnouncementsControlScreen.routeName: (context) =>
-            AnnouncementsControlScreen(),
-        HostEventScreen.routeName: (context) => HostEventScreen(),
-        AdminScreen.routeName: (context) => AdminScreen(),
-        NotificationsScreen.routeName: ((context) => NotificationsScreen()),
-        QuestionsScreen.routeName: ((context) => QuestionsScreen()),
-        CampusScreen.routeName: ((context) => CampusScreen()),
-        AboutDSWScreen.routeName: ((context) => AboutDSWScreen()),
-
-      },
     );
   }
 }
