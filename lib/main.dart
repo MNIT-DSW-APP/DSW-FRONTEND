@@ -44,14 +44,13 @@ class MyApp extends StatelessWidget {
         title: 'DSW App',
         theme: ThemeData(
           primaryColor: GlobalVariables.customGrey,
-          accentColor: GlobalVariables.customYellow,
           fontFamily: 'Lato',
           dividerTheme: const DividerThemeData(
             color: Color.fromRGBO(167, 167, 167, 1),
             space: 35,
             indent: 40,
             endIndent: 50,
-          ),
+          ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: GlobalVariables.customYellow),
         ),
         home: LandingScreen(),
         routes: {
@@ -77,6 +76,8 @@ class MyApp extends StatelessWidget {
           ComplaintDetailScreen.routeName: (context) => ComplaintDetailScreen(),
           ResolveComplaintScreen.routeName: (context) =>
               ResolveComplaintScreen(),
+          CampusScreen.routeName: (context) => CampusScreen(),
+          AboutDSWScreen.routeName: (context) => AboutDSWScreen(),
         },
       ),
     );
