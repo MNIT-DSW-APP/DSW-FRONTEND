@@ -64,9 +64,9 @@ class ComplaintDetailScreen extends StatelessWidget {
                     color: Colors.green,
                     avText: 'H',
                   ),
-                  Chipdata(
+                  const Chipdata(
                     title: 'Hostel Office',
-                    color: const Color.fromRGBO(245, 177, 28, 1),
+                    color: Color.fromRGBO(245, 177, 28, 1),
                     avText: 'O',
                   ),
                 ],

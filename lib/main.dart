@@ -1,4 +1,5 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/models/user.dart';
 import 'package:dswapp/providers/complaint_providers.dart';
 import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
@@ -21,6 +22,8 @@ import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
 import 'package:dswapp/screens/question_answer_screen.dart';
+import 'package:dswapp/screens/user/certificates_screen.dart';
+import 'package:dswapp/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,6 +41,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<ComplaintProvider>(
           create: (_) => ComplaintProvider(),
         ),
+        ChangeNotifierProvider<UserProvider>(
+            create: (context) => UserProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -77,6 +82,7 @@ class MyApp extends StatelessWidget {
           ComplaintDetailScreen.routeName: (context) => ComplaintDetailScreen(),
           ResolveComplaintScreen.routeName: (context) =>
               ResolveComplaintScreen(),
+          CertificatesScreen.routeName: (context) => CertificatesScreen(),
         },
       ),
     );
