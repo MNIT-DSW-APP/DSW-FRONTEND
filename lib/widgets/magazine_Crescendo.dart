@@ -2,7 +2,7 @@ import 'package:dswapp/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
-class MagzineCardSanidhya extends StatelessWidget {
+class MagzineCardCrescendo extends StatelessWidget {
   final String description =
       "As 2021 comes to an end, the Crescendo is here to bid adieu to the year with another editi on full of business insights. We bring you the December edition of MNIT’s official Eco-....";
   @override
@@ -17,7 +17,7 @@ class MagzineCardSanidhya extends StatelessWidget {
               shape: BoxShape.rectangle,
               image:  DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage('lib/assets/images/magazine_sanidhya.jpg')
+                  image: AssetImage('lib/assets/images/magzine.png')
               )
           )),
     );

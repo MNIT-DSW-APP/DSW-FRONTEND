@@ -4,6 +4,7 @@ import 'package:dswapp/widgets/aboutdsw_card.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/footer.dart';
 import 'package:dswapp/widgets/intro.dart';
+import 'package:dswapp/widgets/magazine_Crescendo.dart';
 import 'package:dswapp/widgets/magazine_Saanidhya.dart';
 import 'package:dswapp/widgets/magazine_intro.dart';
 import 'package:dswapp/widgets/upcoming_events_slider.dart';
@@ -30,24 +31,51 @@ class MagazineScreen extends StatelessWidget {
           child: Column(
 
             children: [
-
               MagazineIntro(),
+              SizedBox(
+                height: 20,
+              ),
               RichText(
                 text: const TextSpan(
                   children: [
-                    TextSpan(
-                      text: "Sanidhya Magazine ",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-
-
+                    WidgetSpan(
+                      child: Text(
+                        'Recent Publications',
+                        style: TextStyle(
+                          color: GlobalVariables.customGrey,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.start,
+                        //textDirection: TextDirection.ltr,
                       ),
                     ),
                   ],
                 ),
               ),
+              SizedBox(
+                height: 70,
+              ),
+
+              RichText(
+                text: const TextSpan(
+                  children: [
+                    WidgetSpan(
+                      child: Text(
+                        'Sanidhya Magazine',
+                        style: TextStyle(
+                          color: GlobalVariables.customGrey,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.start,
+                        textDirection: TextDirection.ltr,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Divider(),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -55,11 +83,15 @@ class MagazineScreen extends StatelessWidget {
                       MagzineCardSanidhya(),
                       MagzineCardSanidhya(),
                       MagzineCardSanidhya(),
+                      MagzineCardSanidhya(),
+                      MagzineCardSanidhya(),
 
                     ]
                 ),
               ),
-              Divider(),
+              SizedBox(
+                height: 50,
+              ),
               //const Spacer(),
               RichText(
                 text: const TextSpan(
@@ -75,13 +107,16 @@ class MagazineScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              Divider(),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                     children:[
-                      MagzineCardSanidhya(),
-                      MagzineCardSanidhya(),
-                      MagzineCardSanidhya(),
+                      MagzineCardCrescendo(),
+                      MagzineCardCrescendo(),
+                      MagzineCardCrescendo(),
+                      MagzineCardCrescendo(),
+                      MagzineCardCrescendo(),
 
                     ]
                 ),
@@ -105,8 +140,9 @@ class MagazineScreen extends StatelessWidget {
               // AboutDSWCArd(),
               // Divider(),
               // TasksCard(),
-
+              Footer(),
             ],
+
           ),
         ),
       ),

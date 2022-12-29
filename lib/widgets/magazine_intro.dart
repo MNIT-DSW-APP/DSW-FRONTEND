@@ -14,42 +14,61 @@ class MagazineIntro extends StatelessWidget {
     Size sz = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.all(15),
-      height: sz.height - 200.0,
+      height: sz.height - 300.0,
       width: sz.width,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("lib/assets/images/bg_image_landing_page.png"),
+          image: AssetImage("lib/assets/images/magazine__banner.jpeg"),
           fit: BoxFit.cover,
         ),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             "Magazine",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 45,
+              fontSize: 38,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.left,
           ),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
 
           SizedBox(
-            height: 65,
+            height: 20,
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: GlobalVariables.customYellow,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
-            onPressed: () {},
-            child: Text(
-              "Know More",
-              style: TextStyle(fontSize: 20),
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //       primary: GlobalVariables.customYellow,
+          //       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
+          //   onPressed: () {},
+          //   child: Text(
+          //     "Know More",
+          //     style: TextStyle(fontSize: 20),
+          //   ),
+          // ),
+
+          SizedBox(
+            height: 100,
+          ),
+          TextField(
+            //textAlign: TextAlign.center,
+            decoration: InputDecoration(
+
+              filled: true,
+              fillColor: Color(0xffffffff),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8.0),
+                borderSide: BorderSide.none,
+              ),
+                hintText:"Search Magazine",
+                suffixIcon: Icon(Icons.search),
             ),
-          ),
+          )
         ],
       ),
     );
