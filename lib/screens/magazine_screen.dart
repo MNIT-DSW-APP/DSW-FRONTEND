@@ -35,44 +35,51 @@ class MagazineScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              RichText(
-                text: const TextSpan(
-                  children: [
-                    WidgetSpan(
-                      child: Text(
-                        'Recent Publications',
-                        style: TextStyle(
-                          color: GlobalVariables.customGrey,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
+              Container(
+                alignment: Alignment(-0.9,0),
+                child:
+                RichText(
+                  text: const TextSpan(
+                    children: [
+                      WidgetSpan(
+                        child: Text(
+                          'Recent Publications',
+                          style: TextStyle(
+                            color: GlobalVariables.customGrey,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.start,
+                          //textDirection: TextDirection.ltr,
                         ),
-                        textAlign: TextAlign.start,
-                        //textDirection: TextDirection.ltr,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
                 height: 70,
               ),
 
-              RichText(
-                text: const TextSpan(
-                  children: [
-                    WidgetSpan(
-                      child: Text(
-                        'Sanidhya Magazine',
-                        style: TextStyle(
-                          color: GlobalVariables.customGrey,
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
+              Container(
+                alignment: Alignment(-0.9,0),
+                child: RichText(
+                  text: const TextSpan(
+                    children: [
+                      WidgetSpan(
+                        child: Text(
+                          'Sanidhya Magazine',
+                          style: TextStyle(
+                            color: GlobalVariables.customGrey,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.start,
+                          textDirection: TextDirection.ltr,
                         ),
-                        textAlign: TextAlign.start,
-                        textDirection: TextDirection.ltr,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Divider(),
@@ -93,18 +100,21 @@ class MagazineScreen extends StatelessWidget {
                 height: 50,
               ),
               //const Spacer(),
-              RichText(
-                text: const TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "The Crescendo ",
-                      style: TextStyle(
-                        color: GlobalVariables.customGrey,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
+              Container(
+                alignment: Alignment(-0.9,0),
+                child: RichText(
+                  text: const TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "The Crescendo ",
+                        style: TextStyle(
+                          color: GlobalVariables.customGrey,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Divider(),

@@ -26,20 +26,22 @@ class MagazineIntro extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Magazine",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 38,
+          Container(
+            margin: EdgeInsets.all(40),
+            child:
+            Text(
+              "Magazine",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 38,
+              ),
+              textAlign: TextAlign.left,
             ),
-            textAlign: TextAlign.left,
-          ),
-          SizedBox(
-            height: 20,
           ),
 
+
           SizedBox(
-            height: 20,
+            height: 40,
           ),
           // ElevatedButton(
           //   style: ElevatedButton.styleFrom(
@@ -52,21 +54,27 @@ class MagazineIntro extends StatelessWidget {
           //   ),
           // ),
 
-          SizedBox(
-            height: 100,
-          ),
-          TextField(
-            //textAlign: TextAlign.center,
-            decoration: InputDecoration(
 
-              filled: true,
-              fillColor: Color(0xffffffff),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8.0),
-                borderSide: BorderSide.none,
-              ),
+
+          Container(
+            //margin: ,
+
+
+            margin: new EdgeInsets.symmetric(horizontal: 100.0),
+            child: TextField(
+
+
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Color(0xffffffff),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: BorderSide.none,
+                ),
                 hintText:"Search Magazine",
                 suffixIcon: Icon(Icons.search),
+
+              ),
             ),
           )
         ],
