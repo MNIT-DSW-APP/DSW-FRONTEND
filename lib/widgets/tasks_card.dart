@@ -65,7 +65,7 @@ class TasksCard extends StatelessWidget {
                     return Text(
                       description[index],
                       style: const TextStyle(
-                        color: GlobalVariables.lightGrey,
+                        color: GlobalVariables.customGrey,
                         fontSize: 17,
                         wordSpacing: 1.5,
                         height: 1.5,
