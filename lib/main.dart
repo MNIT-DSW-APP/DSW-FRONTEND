@@ -18,6 +18,7 @@ import 'package:dswapp/screens/host_event_screen.dart';
 import 'package:dswapp/screens/landing_screen.dart';
 import 'package:dswapp/screens/login_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
+import 'package:dswapp/screens/magazine_screen.dart';
 import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
@@ -86,6 +87,7 @@ class MyApp extends StatelessWidget {
           CertificatesScreen.routeName: (context) => CertificatesScreen(),
           CampusScreen.routeName: (context) => CampusScreen(),
           AboutDSWScreen.routeName: (context) => AboutDSWScreen(),
+          MagazineScreen.routeName: ((context) => MagazineScreen()),
         },
       ),
     );

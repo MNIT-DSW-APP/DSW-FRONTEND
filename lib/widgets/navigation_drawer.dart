@@ -3,6 +3,7 @@ import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
 import 'package:dswapp/screens/events_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
+import 'package:dswapp/screens/magazine_screen.dart';
 import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class NavigationDrawer extends StatelessWidget {
     ["Societies", AboutSocieties.routeName],
     ["Events", EventsScreen.routeName],
     ["Campus", CampusScreen.routeName],
+    ["Magazine", MagazineScreen.routeName],
     ["Lost & Found", LostAndFoundScreen.routeName],
     ["FAQs", QuestionsScreen.routeName],
     ["Notifications", NotificationsScreen.routeName],

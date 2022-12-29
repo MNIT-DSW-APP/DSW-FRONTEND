@@ -162,7 +162,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   percent_indicator:
     dependency: "direct main"
     description:
@@ -170,7 +170,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.2"
-    version: "1.8.2"
   plugin_platform_interface:
     dependency: transitive
     description:
