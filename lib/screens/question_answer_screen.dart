@@ -165,7 +165,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                           },
                           child: const Text("Send"),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

@@ -132,7 +132,6 @@ class _CampusScreenState extends State<CampusScreen> {
                 ),
               ),
             ),
-
             const Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: Divider(),
