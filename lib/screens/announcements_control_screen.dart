@@ -21,12 +21,13 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Form(
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Title",
+                      labelStyle: TextStyle(color: Colors.black),
                       hintText: "Enter Title...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -40,13 +41,24 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
                   ),
                 ),
               ),
+              const Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text("limit: 50 words",
+                      style: TextStyle(fontWeight: FontWeight.w100,
+                          color: Colors.grey)
+                  ),
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Form(
                     child: TextFormField(
                       keyboardType: TextInputType.multiline,
                       decoration: const InputDecoration(
                         labelText: "Announcement",
+                        labelStyle: TextStyle(color: Colors.black),
                         hintText: "Announce...",
                         hintStyle: TextStyle(
                           color: Colors.grey,
@@ -60,6 +72,16 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
                     ),
                   ),
                 ),
+              const Padding(
+                padding: EdgeInsets.only(right: 15.0, bottom: 15),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text("limit: 1000 words",
+                      style: TextStyle(fontWeight: FontWeight.w100,
+                          color: Colors.grey)
+                  ),
+                ),
+              ),
               Row(
                 children: <Widget>[
                   Checkbox(
