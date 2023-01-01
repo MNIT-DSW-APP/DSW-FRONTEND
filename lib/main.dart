@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(secondary: GlobalVariables.customYellow),
         ),
-        home: LandingScreen(),
+        home: const LandingScreen(),
         routes: {
           PanelScreen.routeName: (context) => PanelScreen(),
           LostAndFoundScreen.routeName: (context) => LostAndFoundScreen(),
@@ -89,8 +89,10 @@ class MyApp extends StatelessWidget {
           CampusScreen.routeName: (context) => CampusScreen(),
           AboutDSWScreen.routeName: (context) => AboutDSWScreen(),
           MagazineScreen.routeName: ((context) => MagazineScreen()),
-          ComplaintRegisterScreen.routeName: ((context) => ComplaintRegisterScreen()),
-          LostAndFoundRegisterScreen.routeName: ((context) => LostAndFoundRegisterScreen())
+          ComplaintRegisterScreen.routeName: ((context) =>
+              ComplaintRegisterScreen()),
+          LostAndFoundRegisterScreen.routeName: ((context) =>
+              LostAndFoundRegisterScreen())
         },
       ),
     );

@@ -76,7 +76,6 @@ flutter:
     - lib/assets/images/lost_found.png
     - lib/assets/images/magzine.png
     - lib/assets/images/magazine_sanidhya.jpg
-    - lib/assets/images/magazine__banner.jpeg
     - lib/assets/images/login_panel.png
     - lib/assets/images/the_mavericks.png
     - lib/assets/images/emc2.png
@@ -100,6 +99,8 @@ flutter:
     - lib/assets/images/sports_screen.jpg
     - lib/assets/images/demo_certificate.png
     - lib/assets/images/xls.png
+    - lib/assets/images/aboutdsw.png
+    - lib/assets/images/about_magzine.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

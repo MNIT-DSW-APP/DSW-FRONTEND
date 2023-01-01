@@ -6,14 +6,13 @@ import 'package:dswapp/widgets/footer.dart';
 import 'package:dswapp/widgets/intro.dart';
 import 'package:dswapp/widgets/magazine_Crescendo.dart';
 import 'package:dswapp/widgets/magazine_Saanidhya.dart';
-import 'package:dswapp/widgets/magazine_intro.dart';
+import 'package:dswapp/widgets/intro_widget.dart';
 import 'package:dswapp/widgets/upcoming_events_slider.dart';
 import 'package:dswapp/widgets/magzine_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:dswapp/widgets/tasks_card.dart';
 import 'package:flutter/material.dart';
 import '../constants/global_variables.dart';
-import '../widgets/upcoming_events_slider.dart';
 
 class MagazineScreen extends StatelessWidget {
   const MagazineScreen({Key? key}) : super(key: key);
@@ -29,16 +28,17 @@ class MagazineScreen extends StatelessWidget {
         body: SingleChildScrollView(
           controller: ScrollController(),
           child: Column(
-
             children: [
-              MagazineIntro(),
+              IntroWidget(
+                imageUrl: "lib/assets/images/about_magzine.jpg",
+                title: "Magazine",
+              ),
               SizedBox(
                 height: 20,
               ),
               Container(
-                alignment: Alignment(-0.9,0),
-                child:
-                RichText(
+                alignment: Alignment(-0.9, 0),
+                child: RichText(
                   text: const TextSpan(
                     children: [
                       WidgetSpan(
@@ -62,7 +62,7 @@ class MagazineScreen extends StatelessWidget {
               ),
 
               Container(
-                alignment: Alignment(-0.9,0),
+                alignment: Alignment(-0.9, 0),
                 child: RichText(
                   text: const TextSpan(
                     children: [
@@ -85,23 +85,20 @@ class MagazineScreen extends StatelessWidget {
               Divider(),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                    children:[
-                      MagzineCardSanidhya(),
-                      MagzineCardSanidhya(),
-                      MagzineCardSanidhya(),
-                      MagzineCardSanidhya(),
-                      MagzineCardSanidhya(),
-
-                    ]
-                ),
+                child: Row(children: [
+                  MagzineCardSanidhya(),
+                  MagzineCardSanidhya(),
+                  MagzineCardSanidhya(),
+                  MagzineCardSanidhya(),
+                  MagzineCardSanidhya(),
+                ]),
               ),
               SizedBox(
                 height: 50,
               ),
               //const Spacer(),
               Container(
-                alignment: Alignment(-0.9,0),
+                alignment: Alignment(-0.9, 0),
                 child: RichText(
                   text: const TextSpan(
                     children: [
@@ -120,16 +117,13 @@ class MagazineScreen extends StatelessWidget {
               Divider(),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                    children:[
-                      MagzineCardCrescendo(),
-                      MagzineCardCrescendo(),
-                      MagzineCardCrescendo(),
-                      MagzineCardCrescendo(),
-                      MagzineCardCrescendo(),
-
-                    ]
-                ),
+                child: Row(children: [
+                  MagzineCardCrescendo(),
+                  MagzineCardCrescendo(),
+                  MagzineCardCrescendo(),
+                  MagzineCardCrescendo(),
+                  MagzineCardCrescendo(),
+                ]),
               ),
               // RichText(
               //   text: TextSpan(
@@ -152,7 +146,6 @@ class MagazineScreen extends StatelessWidget {
               // TasksCard(),
               Footer(),
             ],
-
           ),
         ),
       ),

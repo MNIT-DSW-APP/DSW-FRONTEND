@@ -35,7 +35,7 @@ class LostAndFoundScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: GlobalVariables.customYellow,
+                        primary: GlobalVariables.customYellow,
                         padding: const EdgeInsets.all(15)),
                     child: const Text(
                       "Add Request",
