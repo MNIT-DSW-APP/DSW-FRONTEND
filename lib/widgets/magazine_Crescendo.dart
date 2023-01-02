@@ -1,4 +1,5 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/screens/magazine_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
@@ -9,18 +10,67 @@ class MagzineCardCrescendo extends StatelessWidget {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Card(
-      margin: EdgeInsets.all(width * 0.05),
+      margin: EdgeInsets.all(width*0.05),
       child: Container(
-          width: 220.0,
-          height: 300.0,
-          decoration: const BoxDecoration(
-              shape: BoxShape.rectangle,
-              image:  DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage('lib/assets/images/magzine.png')
-              )
-          )),
+        width: 220,
+        height: 350,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
 
+                height: 250,
+                width: 200,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage('lib/assets/images/magzine.png'),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 270,
+              left: 10,
+              right:10,
+              child: Text(
+                "The Crescendo it the official Eco-Business and Entrepreneurial news magazine of MNIT Jaipur",
+                style: TextStyle(
+                  color: GlobalVariables.customGrey,
+                  fontSize: 9,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+
+            Positioned(
+              top: 310,
+              left: 10,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(
+                      width: 1.0,
+                      color: Colors.orange,
+                  ),
+                    primary: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
+                onPressed: () {
+
+                },
+                child: Text(
+                  "Read Here",
+                  style: TextStyle(fontSize: 10,color: Colors.orange,fontWeight:FontWeight.w400),
+                ),
+              ),
+            ),
+
+
+          ],
+        ),
+      ),
     );
   }
 }

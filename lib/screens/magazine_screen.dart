@@ -35,7 +35,7 @@ class MagazineScreen extends StatelessWidget {
             children: [
               MagazineIntro(),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
               Container(
                 alignment: Alignment(-0.9,0),
@@ -80,6 +80,9 @@ class MagazineScreen extends StatelessWidget {
                       ]
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
                 alignment: Alignment(-0.9,0),
