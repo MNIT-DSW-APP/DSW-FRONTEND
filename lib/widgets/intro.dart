@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -58,7 +59,9 @@ class Intro extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 primary: GlobalVariables.customYellow,
                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AboutDSWScreen.routeName);
+            },
             child: Text(
               "Know More",
               style: TextStyle(fontSize: 20),

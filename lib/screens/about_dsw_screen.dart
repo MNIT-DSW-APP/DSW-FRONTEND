@@ -5,7 +5,7 @@ import 'package:dswapp/widgets/aboutdsw_card.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/faculty_profile_card.dart';
 import 'package:dswapp/widgets/footer.dart';
-import 'package:dswapp/widgets/intro.dart';
+import 'package:dswapp/widgets/intro_widget.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:dswapp/widgets/tasks_card.dart';
 import 'package:flutter/material.dart';
@@ -27,37 +27,16 @@ class AboutDSWScreen extends StatelessWidget {
           controller: ScrollController(),
           child: Column(
             children: [
-              Intro(),
-              SizedBox(
-                height: 40,
-                width: MediaQuery.of(context).size.width,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(color: GlobalVariables.customGrey),
-                ),
-              ),
-              Divider(),
-              RichText(
-                text: TextSpan(
-                  text: "Student ",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 32,
-                  ),
-                  children: const [
-                    TextSpan(
-                        text: "Welfare",
-                        style: TextStyle(
-                          color: GlobalVariables.customYellow,
-                        ))
-                  ],
-                ),
+              IntroWidget(
+                imageUrl: "lib/assets/images/aboutdsw.png",
+                title: "About DSW",
               ),
               AboutDSWCArd(),
               Divider(),
               TasksCard(),
               Divider(),
               Container(
-                height: 50,
+                  height: 50,
                   child: RichText(
                     text: TextSpan(
                       text: "DSW ",
@@ -77,7 +56,7 @@ class AboutDSWScreen extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: facultyList.map((person){
+                  children: facultyList.map((person) {
                     return FacultyCard(person: person);
                   }).toList(),
                 ),

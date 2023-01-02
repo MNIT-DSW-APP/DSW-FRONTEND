@@ -1,4 +1,5 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/screens/magazine_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
 
@@ -71,14 +72,18 @@ class MagzineCard extends StatelessWidget {
                 ),
               ),
             ),
-            const Positioned(
+            Positioned(
               top: 251,
               left: 93,
-              child: Text(
-                "Take me to the magzine >>>",
-                style: TextStyle(
-                  color: Color.fromRGBO(77, 102, 166, 1),
-                  fontSize: 14,
+              child: GestureDetector(
+                onTap: () =>
+                    Navigator.of(context).pushNamed(MagazineScreen.routeName),
+                child: const Text(
+                  "Take me to the magzine >>>",
+                  style: TextStyle(
+                    color: Color.fromRGBO(77, 102, 166, 1),
+                    fontSize: 14,
+                  ),
                 ),
               ),
             )

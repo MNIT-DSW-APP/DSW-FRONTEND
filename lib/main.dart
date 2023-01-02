@@ -23,8 +23,9 @@ import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
 import 'package:dswapp/screens/question_answer_screen.dart';
+import 'package:dswapp/screens/register_complaint_screen.dart';
+import 'package:dswapp/screens/register_lost_and_found.dart';
 import 'package:dswapp/screens/user/certificates_screen.dart';
-import 'package:dswapp/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(secondary: GlobalVariables.customYellow),
         ),
-        home: LandingScreen(),
+        home: const LandingScreen(),
         routes: {
           PanelScreen.routeName: (context) => PanelScreen(),
           LostAndFoundScreen.routeName: (context) => LostAndFoundScreen(),
@@ -88,6 +89,10 @@ class MyApp extends StatelessWidget {
           CampusScreen.routeName: (context) => CampusScreen(),
           AboutDSWScreen.routeName: (context) => AboutDSWScreen(),
           MagazineScreen.routeName: ((context) => MagazineScreen()),
+          ComplaintRegisterScreen.routeName: ((context) =>
+              ComplaintRegisterScreen()),
+          LostAndFoundRegisterScreen.routeName: ((context) =>
+              LostAndFoundRegisterScreen())
         },
       ),
     );
