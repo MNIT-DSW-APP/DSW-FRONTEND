@@ -6,7 +6,8 @@ import 'package:dswapp/widgets/footer.dart';
 import 'package:dswapp/widgets/intro.dart';
 import 'package:dswapp/widgets/magazine_Crescendo.dart';
 import 'package:dswapp/widgets/magazine_Saanidhya.dart';
-import 'package:dswapp/widgets/magazine_intro.dart';
+import 'package:dswapp/widgets/magazine_scroll.dart';
+//import 'package:dswapp/widgets/magazine_intro.dart';
 import 'package:dswapp/widgets/upcoming_events_slider.dart';
 import 'package:dswapp/widgets/magzine_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
@@ -31,7 +32,7 @@ class MagazineScreen extends StatelessWidget {
           child: Column(
 
             children: [
-              MagazineIntro(),
+              //MagazineIntro(),
               SizedBox(
                 height: 20,
               ),
@@ -61,6 +62,25 @@ class MagazineScreen extends StatelessWidget {
                 height: 70,
               ),
 
+              Container(
+                height: 400,
+                width:900,
+                  margin: EdgeInsets.symmetric(horizontal: 30),
+                child: SingleChildScrollView(
+
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                      children:[
+                        MagazineScroll(),
+                        MagazineScroll(),
+                        MagazineScroll(),
+                        MagazineScroll(),
+                        MagazineScroll(),
+
+                      ]
+                  ),
+                ),
+              ),
               Container(
                 alignment: Alignment(-0.9,0),
                 child: RichText(

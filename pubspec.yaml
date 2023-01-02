@@ -75,6 +75,7 @@ flutter:
     - lib/assets/images/carousel_image1.png
     - lib/assets/images/lost_found.png
     - lib/assets/images/magzine.png
+    - lib/assets/images/magazine_scroll.png
     - lib/assets/images/magazine_sanidhya.jpg
     - lib/assets/images/magazine__banner.jpeg
     - lib/assets/images/login_panel.png
