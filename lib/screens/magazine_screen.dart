@@ -5,9 +5,15 @@ import 'package:dswapp/widgets/footer.dart';
 import 'package:dswapp/widgets/magazine_Crescendo.dart';
 import 'package:dswapp/widgets/magazine_Saanidhya.dart';
 import 'package:dswapp/widgets/intro_widget.dart';
+import 'package:dswapp/widgets/magazine_intro.dart';
+import 'package:dswapp/widgets/magazine_scroll.dart';
+//import 'package:dswapp/widgets/magazine_intro.dart';
+import 'package:dswapp/widgets/upcoming_events_slider.dart';
+import 'package:dswapp/widgets/magzine_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 import '../constants/global_variables.dart';
+import '../widgets/upcoming_events_slider.dart';
 
 class MagazineScreen extends StatelessWidget {
   const MagazineScreen({Key? key}) : super(key: key);
@@ -24,12 +30,9 @@ class MagazineScreen extends StatelessWidget {
           controller: ScrollController(),
           child: Column(
             children: [
-              IntroWidget(
-                imageUrl: "lib/assets/images/about_magzine.jpg",
-                title: "Magazine",
-              ),
+              MagazineIntro(),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
               Container(
                 alignment: Alignment(-0.9, 0),
@@ -56,6 +59,22 @@ class MagazineScreen extends StatelessWidget {
                 height: 70,
               ),
 
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 30),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    MagazineScroll(),
+                    MagazineScroll(),
+                    MagazineScroll(),
+                    MagazineScroll(),
+                    MagazineScroll(),
+                  ]),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 alignment: Alignment(-0.9, 0),
                 child: RichText(
