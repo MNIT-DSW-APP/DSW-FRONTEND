@@ -1,6 +1,6 @@
+import 'package:dswapp/widgets/copyright.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
-
 
 class ComplaintRegisterScreen extends StatefulWidget {
   const ComplaintRegisterScreen({Key? key}) : super(key: key);
@@ -22,7 +22,8 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Form(
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
@@ -34,8 +35,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                         color: Colors.grey,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(10)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),
                     maxLines: 4,
@@ -47,13 +47,13 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Text("limit: 50 words",
-                  style: TextStyle(fontWeight: FontWeight.w100,
-                  color: Colors.grey)
-                    ),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Form(
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
@@ -65,8 +65,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                         color: Colors.grey,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(10)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),
                     maxLines: 12,
@@ -78,9 +77,8 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Text("limit: 1000 words",
-                      style: TextStyle(fontWeight: FontWeight.w100,
-                          color: Colors.grey)
-                  ),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
               ),
               Row(
@@ -94,11 +92,13 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                     },
                   ),
                   InkWell(
-                    onTap: (){},
-                    child: const Text("I agree to the terms and conditions \n regarding complaint registration.",
+                    onTap: () {},
+                    child: const Text(
+                      "I agree to the terms and conditions \n regarding complaint registration.",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                      ),),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -109,11 +109,12 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all(10),
-                        side: MaterialStateProperty.all(const BorderSide(color: Colors.black26)),
+                        side: MaterialStateProperty.all(
+                            const BorderSide(color: Colors.black26)),
                         backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.yellow),
-                        foregroundColor: MaterialStateProperty.all(Colors.black)
-                    ),
+                            MaterialStateProperty.all<Color>(Colors.yellow),
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.black)),
                     onPressed: termsAndConditionCheckbox == true ? () {} : null,
                     child: const Text(
                       "Submit",
@@ -123,13 +124,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                 ),
               ),
               const Divider(height: 50),
-              Column(
-                children: const [
-                  Text("Disclaimer: Copyright © 2022"),
-                  Text("Malaviya National Institute of Technology Jaipur"),
-                  Divider(thickness: 0.0001, height: 20,)
-                ],
-              ),
+              const Copyright(),
             ],
           ),
         ),

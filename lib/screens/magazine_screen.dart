@@ -1,16 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:dswapp/widgets/aboutdsw_card.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/footer.dart';
-import 'package:dswapp/widgets/intro.dart';
 import 'package:dswapp/widgets/magazine_Crescendo.dart';
 import 'package:dswapp/widgets/magazine_Saanidhya.dart';
 import 'package:dswapp/widgets/intro_widget.dart';
-import 'package:dswapp/widgets/upcoming_events_slider.dart';
-import 'package:dswapp/widgets/magzine_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
-import 'package:dswapp/widgets/tasks_card.dart';
 import 'package:flutter/material.dart';
 import '../constants/global_variables.dart';
 
