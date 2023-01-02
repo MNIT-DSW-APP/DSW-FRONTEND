@@ -1,3 +1,5 @@
+import 'package:dswapp/screens/admin/certifications_screen.dart';
+import 'package:dswapp/screens/user/certificates_screen.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/custom_black_button.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +21,7 @@ class CertificationsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "Certify",
               icon: FontAwesomeIcons.award,
-              routename: "/",
+              routename: CertificationsScreen.routeName,
             ),
             Text(
               "OR",
@@ -31,7 +33,7 @@ class CertificationsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "View previous certifications",
               icon: FontAwesomeIcons.certificate,
-              routename: '/',
+              routename: CertificatesScreen.routeName,
             )
           ]),
     ));

@@ -15,7 +15,8 @@ class PanelButton extends StatelessWidget {
       height: 45,
       margin: const EdgeInsets.only(bottom: 25),
       child: ElevatedButton(
-        onPressed: () => Navigator.of(context).pushNamed(LogInScreen.routeName),
+        onPressed: () =>
+            Navigator.of(context).popAndPushNamed(LogInScreen.routeName),
         style: ElevatedButton.styleFrom(primary: GlobalVariables.customYellow),
         child: Padding(
           padding: const EdgeInsets.symmetric(

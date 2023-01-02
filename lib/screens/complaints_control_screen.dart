@@ -1,3 +1,5 @@
+import 'package:dswapp/screens/admin/complaint_detail_screen.dart';
+import 'package:dswapp/screens/admin/complaint_screen.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/custom_black_button.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class ComplaintsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "Unsoved Complaints",
               icon: Icons.pending,
-              routename: "/",
+              routename: ComplaintsScreen.routeName,
             ),
             Text(
               "OR",
@@ -30,7 +32,7 @@ class ComplaintsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "Solved complaints",
               icon: Icons.done,
-              routename: '/',
+              routename: ComplaintsScreen.routeName,
             )
           ]),
     ));

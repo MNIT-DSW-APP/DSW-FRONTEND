@@ -112,11 +112,12 @@ class ComplaintDetailScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 25, bottom: 56),
               child: ElevatedButton(
-                onPressed: (() {
-                  Navigator.of(context).pushNamed(
-                      ResolveComplaintScreen.routeName,
-                      arguments: complaint);
-                }),
+                // onPressed: (() {
+                //   Navigator.of(context).pushNamed(
+                //       ResolveComplaintScreen.routeName,
+                //       arguments: complaint);
+                // }),
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   primary: const Color.fromRGBO(7, 163, 69, 1),
                   padding: const EdgeInsets.all(12),

@@ -1,6 +1,9 @@
 import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/models/user.dart';
 import 'package:dswapp/screens/user/certificates_screen.dart';
+import 'package:dswapp/screens/user/register_complaint_screen.dart';
+import 'package:dswapp/screens/user/register_lost_and_found.dart';
+import 'package:dswapp/widgets/copyright.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +12,8 @@ import 'package:flutter/material.dart';
 
 class UserProfileScreen extends StatelessWidget {
   const UserProfileScreen({Key? key}) : super(key: key);
+
+  static const routeName = 'user-profile';
 
   @override
   Widget build(BuildContext context) {
@@ -243,16 +248,23 @@ class UserProfileScreen extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('Register Lost/Found item'),
+                  children: [
+                    GestureDetector(
+                        onTap: () => Navigator.of(context)
+                            .pushNamed(LostAndFoundRegisterScreen.routeName),
+                        child: Text('Register Lost/Found item')),
                     Text(
                       '|',
                       style: TextStyle(color: GlobalVariables.lightGrey),
                     ),
-                    Text('Register complaint')
+                    GestureDetector(
+                        onTap: () => Navigator.of(context)
+                            .pushNamed(ComplaintRegisterScreen.routeName),
+                        child: Text('Register complaint'))
                   ],
                 ),
               ),
+              Copyright(),
             ],
           ),
         ));

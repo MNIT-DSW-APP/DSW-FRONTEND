@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:dswapp/widgets/aboutdsw_card.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/footer.dart';
@@ -19,7 +17,7 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(),
+        appBar: const CustomAppBar(),
         endDrawer: NavigationDrawer(),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         body: SingleChildScrollView(
@@ -30,21 +28,21 @@ class LandingScreen extends StatelessWidget {
               SizedBox(
                 height: 40,
                 width: MediaQuery.of(context).size.width,
-                child: DecoratedBox(
+                child: const DecoratedBox(
                   decoration: BoxDecoration(color: GlobalVariables.customGrey),
                 ),
               ),
-              UpcomingEventsSlider(),
+              const UpcomingEventsSlider(),
               MagzineCard(),
-              Divider(),
+              const Divider(),
               RichText(
-                text: TextSpan(
+                text: const TextSpan(
                   text: "Student ",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 32,
                   ),
-                  children: const [
+                  children: [
                     TextSpan(
                         text: "Welfare",
                         style: TextStyle(
@@ -54,9 +52,9 @@ class LandingScreen extends StatelessWidget {
                 ),
               ),
               AboutDSWCArd(),
-              Divider(),
+              const Divider(),
               TasksCard(),
-              SizedBox(
+              const SizedBox(
                 width: 110,
               ),
               Footer(),

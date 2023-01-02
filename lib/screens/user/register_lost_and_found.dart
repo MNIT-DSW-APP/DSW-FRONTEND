@@ -1,28 +1,17 @@
-import 'dart:math';
-
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/chip_data.dart';
-
-class ComplaintRegisterScreen extends StatefulWidget {
-  const ComplaintRegisterScreen({Key? key}) : super(key: key);
-  static const routeName = '/complaint_registration';
+class LostAndFoundRegisterScreen extends StatefulWidget {
+  const LostAndFoundRegisterScreen({Key? key}) : super(key: key);
+  static const routeName = '/lost-and-found_registration';
 
   @override
-  State<ComplaintRegisterScreen> createState() => _ComplaintRegisterScreen();
+  State<LostAndFoundRegisterScreen> createState() =>
+      _LostAndFoundRegisterScreen();
 }
 
-class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
+class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
   bool termsAndConditionCheckbox = false;
-
-  final List<Chipdata> _chipList = [];
-  final TextEditingController _chipText = TextEditingController();
-  void deleteChips(String title) {
-    setState(() {
-      _chipList.removeWhere((element) => element.title == title);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +28,9 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
-                      labelText: "Complaint Title",
-                      labelStyle: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                      hintText: "Enter Complaint Title...",
+                      labelText: "Title",
+                      labelStyle: TextStyle(color: Colors.black),
+                      hintText: "Enter Title...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
                       ),
@@ -56,63 +42,14 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
-                child: Wrap(
-                  spacing: 7,
-                  children: _chipList
-                      .map((chip) => Chip(
-                            label: Text(chip.title),
-                            onDeleted: () {
-                              deleteChips(chip.title);
-                            },
-                            backgroundColor: Colors.primaries[
-                                Random().nextInt(Colors.primaries.length)],
-                          ))
-                      .toList(),
+              const Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text("limit: 50 words",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 10),
-                      child: TextField(
-                        decoration:
-                            const InputDecoration(border: OutlineInputBorder()),
-                        controller: _chipText,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 5),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10.0, vertical: 10),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          _chipList.add(Chipdata(
-                              title: _chipText.text,
-                              color: Colors.primaries[
-                                  Random().nextInt(Colors.primaries.length)],
-                              avText: _chipText.text[0]));
-                          _chipText.text = '';
-                        });
-                      },
-                      style: ButtonStyle(
-                          elevation: MaterialStateProperty.all(10),
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black26)),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.yellow),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.black)),
-                      child: const Text("Add Tags"),
-                    ),
-                  )
-                ],
               ),
               Padding(
                 padding:
@@ -144,6 +81,50 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                           fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
               ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black26)),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white30),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.black)),
+                      onPressed: () {},
+                      child: const Text(
+                        "Upload Image",
+                        style: TextStyle(fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: const [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "(Optional)",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w100,
+                                fontSize: 10,
+                                color: Colors.grey),
+                          ),
+                        ),
+                        Text(
+                          "\t (Image size must not exceed 2MB.)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 10,
+                              color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 children: <Widget>[
                   Checkbox(
@@ -157,7 +138,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   InkWell(
                     onTap: () {},
                     child: const Text(
-                      "I agree to the terms and conditions \n regarding complaint registration.",
+                      "I agree to the terms and conditions \n regarding registration.",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                       ),
@@ -181,7 +162,9 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                     onPressed: termsAndConditionCheckbox == true ? () {} : null,
                     child: const Text(
                       "Submit",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),

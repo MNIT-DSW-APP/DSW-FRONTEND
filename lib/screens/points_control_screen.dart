@@ -1,4 +1,6 @@
 import 'package:dswapp/constants/global_variables.dart';
+import 'package:dswapp/screens/admin/give_club_points_screen.dart';
+import 'package:dswapp/screens/admin/give_student_points_screen.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/custom_black_button.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +33,7 @@ class PointsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "Student",
               icon: FontAwesomeIcons.person,
-              routename: "/",
+              routename: GiveStudentPointsScreen.routeName,
             ),
             Text(
               "OR",
@@ -43,7 +45,7 @@ class PointsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "Club",
               icon: FontAwesomeIcons.userGroup,
-              routename: '/',
+              routename: GiveClubPointsScreen.routeName,
             )
           ]),
     ));

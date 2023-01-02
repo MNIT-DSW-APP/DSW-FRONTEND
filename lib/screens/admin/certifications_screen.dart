@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../../constants/global_variables.dart';
 
-//TODO: add this screen
 class CertificationsScreen extends StatefulWidget {
   static const routeName = '/certifications';
 

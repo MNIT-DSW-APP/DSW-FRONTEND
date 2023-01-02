@@ -100,7 +100,7 @@ class _HostEventScreenState extends State<HostEventScreen> {
             ),
             const Text(
               "Select start date of event",
-              style: const TextStyle(
+              style: TextStyle(
                 color: GlobalVariables.customGrey,
                 fontSize: 20,
               ),
@@ -122,10 +122,11 @@ class _HostEventScreenState extends State<HostEventScreen> {
                     );
                     if (newdate == null)
                       return;
-                    else
+                    else {
                       setState(() {
                         dt = newdate;
                       });
+                    }
                   },
                 ),
                 const Spacer(),
@@ -136,7 +137,7 @@ class _HostEventScreenState extends State<HostEventScreen> {
                   child: Text(
                     '${dt.day}/${dt.month}/${dt.year}',
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -182,7 +183,7 @@ class _HostEventScreenState extends State<HostEventScreen> {
                   child: Text(
                     '${dt.day}/${dt.month}/${dt.year}',
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -227,7 +228,7 @@ class _HostEventScreenState extends State<HostEventScreen> {
                   child: Text(
                     '${dt.day}/${dt.month}/${dt.year}',
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -240,6 +241,17 @@ class _HostEventScreenState extends State<HostEventScreen> {
               ),
               keyboardType: TextInputType.url,
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: (() {}),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.all(15),
+                primary: GlobalVariables.customYellow,
+              ),
+              child: const Text("Submit"),
+            )
           ]),
         ),
       ),
