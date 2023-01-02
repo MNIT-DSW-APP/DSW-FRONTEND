@@ -17,7 +17,7 @@ class MagazineScroll extends StatelessWidget {
       margin: new EdgeInsets.symmetric(horizontal: 50.0),
       padding: EdgeInsets.all(15),
       height: sz.height - 350.0,
-      width: sz.width-200,
+      width: sz.width-100,
       decoration: BoxDecoration(
 
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
