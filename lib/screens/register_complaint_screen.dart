@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/chip_data.dart';
 
 class ComplaintRegisterScreen extends StatefulWidget {
   const ComplaintRegisterScreen({Key? key}) : super(key: key);
@@ -13,6 +16,14 @@ class ComplaintRegisterScreen extends StatefulWidget {
 class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
   bool termsAndConditionCheckbox = false;
 
+  final List<Chipdata> _chipList = [];
+  final TextEditingController _chipText = TextEditingController();
+  void deleteChips(String title) {
+    setState(() {
+      _chipList.removeWhere((element) => element.title == title);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,38 +33,90 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Form(
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
-                      labelText: "Title",
-                      labelStyle: TextStyle(color: Colors.black),
-                      hintText: "Enter Title...",
+                      labelText: "Complaint Title",
+                      labelStyle: TextStyle(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                      hintText: "Enter Complaint Title...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(10)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),
                     maxLines: 4,
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 15.0),
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Text("limit: 50 words",
-                  style: TextStyle(fontWeight: FontWeight.w100,
-                  color: Colors.grey)
-                    ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                child: Wrap(
+                  spacing: 7,
+                  children: _chipList
+                      .map((chip) => Chip(
+                            label: Text(chip.title),
+                            onDeleted: () {
+                              deleteChips(chip.title);
+                            },
+                            backgroundColor: Colors.primaries[
+                                Random().nextInt(Colors.primaries.length)],
+                          ))
+                      .toList(),
                 ),
               ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0, vertical: 10),
+                      child: TextField(
+                        decoration:
+                            const InputDecoration(border: OutlineInputBorder()),
+                        controller: _chipText,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 5),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0, vertical: 10),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          _chipList.add(Chipdata(
+                              title: _chipText.text,
+                              color: Colors.primaries[
+                                  Random().nextInt(Colors.primaries.length)],
+                              avText: _chipText.text[0]));
+                          _chipText.text = '';
+                        });
+                      },
+                      style: ButtonStyle(
+                          elevation: MaterialStateProperty.all(10),
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black26)),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.yellow),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.black)),
+                      child: const Text("Add Tags"),
+                    ),
+                  )
+                ],
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Form(
                   child: TextFormField(
                     keyboardType: TextInputType.multiline,
@@ -65,8 +128,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                         color: Colors.grey,
                       ),
                       border: OutlineInputBorder(
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(10)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                     ),
                     maxLines: 12,
@@ -78,9 +140,8 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Text("limit: 1000 words",
-                      style: TextStyle(fontWeight: FontWeight.w100,
-                          color: Colors.grey)
-                  ),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
               ),
               Row(
@@ -94,11 +155,13 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                     },
                   ),
                   InkWell(
-                    onTap: (){},
-                    child: const Text("I agree to the terms and conditions \n regarding complaint registration.",
+                    onTap: () {},
+                    child: const Text(
+                      "I agree to the terms and conditions \n regarding complaint registration.",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                      ),),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -109,11 +172,12 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all(10),
-                        side: MaterialStateProperty.all(const BorderSide(color: Colors.black26)),
+                        side: MaterialStateProperty.all(
+                            const BorderSide(color: Colors.black26)),
                         backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.yellow),
-                        foregroundColor: MaterialStateProperty.all(Colors.black)
-                    ),
+                            MaterialStateProperty.all<Color>(Colors.yellow),
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.black)),
                     onPressed: termsAndConditionCheckbox == true ? () {} : null,
                     child: const Text(
                       "Submit",
@@ -127,7 +191,10 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                 children: const [
                   Text("Disclaimer: Copyright © 2022"),
                   Text("Malaviya National Institute of Technology Jaipur"),
-                  Divider(thickness: 0.0001, height: 20,)
+                  Divider(
+                    thickness: 0.0001,
+                    height: 20,
+                  )
                 ],
               ),
             ],

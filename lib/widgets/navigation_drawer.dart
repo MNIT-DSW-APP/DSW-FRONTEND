@@ -12,7 +12,6 @@ import 'package:dswapp/screens/question_answer_screen.dart';
 
 
 
-
 class NavigationDrawer extends StatelessWidget {
   final List<List> drawerItems = [
     ["Home", '/'],
