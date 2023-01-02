@@ -20,6 +20,7 @@ class MagzineCardCrescendo extends StatelessWidget {
                   image: AssetImage('lib/assets/images/magzine.png')
               )
           )),
+
     );
   }
 }
