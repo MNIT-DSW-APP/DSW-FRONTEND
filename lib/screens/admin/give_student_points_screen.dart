@@ -5,7 +5,7 @@ import '../../widgets/custom_appbar.dart';
 
 class GiveStudentPointsScreen extends StatefulWidget {
   const GiveStudentPointsScreen({super.key});
-  static const routeName = 'give-student-points';
+  static const routeName = '/give-student-points';
   @override
   State<GiveStudentPointsScreen> createState() =>
       _GiveStudentPointsScreenState();

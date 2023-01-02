@@ -6,12 +6,10 @@ import 'package:dswapp/screens/lost_and_found_screen.dart';
 import 'package:dswapp/screens/magazine_screen.dart';
 import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
+import 'package:dswapp/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:dswapp/screens/campus_screen.dart';
 import 'package:dswapp/screens/question_answer_screen.dart';
-
-
-
 
 class NavigationDrawer extends StatelessWidget {
   final List<List> drawerItems = [
@@ -25,6 +23,7 @@ class NavigationDrawer extends StatelessWidget {
     ["FAQs", QuestionsScreen.routeName],
     ["Notifications", NotificationsScreen.routeName],
     ["Login", PanelScreen.routeName],
+    ["User Profile", UserProfileScreen.routeName],
   ];
   Widget buildListTile(String tileTitle, VoidCallback tapHandler) {
     return ListTile(

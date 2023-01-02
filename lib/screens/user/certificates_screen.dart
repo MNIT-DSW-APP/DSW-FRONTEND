@@ -1,11 +1,12 @@
 import 'package:dswapp/models/user.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 import '../../constants/global_variables.dart';
+import 'register_complaint_screen.dart';
+import 'register_lost_and_found.dart';
 
 class CertificatesScreen extends StatelessWidget {
   const CertificatesScreen({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class CertificatesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = ModalRoute.of(context)!.settings.arguments as User;
+    final user = context.watch<UserProvider>().user;
     return Scaffold(
       appBar: const CustomAppBar(),
       body: SingleChildScrollView(
@@ -177,13 +178,19 @@ class CertificatesScreen extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text('Register Lost/Found item'),
+              children: [
+                GestureDetector(
+                    onTap: () => Navigator.of(context)
+                        .pushNamed(LostAndFoundRegisterScreen.routeName),
+                    child: Text('Register Lost/Found item')),
                 Text(
                   '|',
                   style: TextStyle(color: GlobalVariables.lightGrey),
                 ),
-                Text('Register complaint')
+                GestureDetector(
+                    onTap: () => Navigator.of(context)
+                        .pushNamed(ComplaintRegisterScreen.routeName),
+                    child: Text('Register complaint'))
               ],
             ),
           ),

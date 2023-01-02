@@ -1,16 +1,16 @@
-import 'package:dswapp/widgets/copyright.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
-class ComplaintRegisterScreen extends StatefulWidget {
-  const ComplaintRegisterScreen({Key? key}) : super(key: key);
-  static const routeName = '/complaint_registration';
+class LostAndFoundRegisterScreen extends StatefulWidget {
+  const LostAndFoundRegisterScreen({Key? key}) : super(key: key);
+  static const routeName = '/lost-and-found_registration';
 
   @override
-  State<ComplaintRegisterScreen> createState() => _ComplaintRegisterScreen();
+  State<LostAndFoundRegisterScreen> createState() =>
+      _LostAndFoundRegisterScreen();
 }
 
-class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
+class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
   bool termsAndConditionCheckbox = false;
 
   @override
@@ -81,6 +81,50 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                           fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
               ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black26)),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white30),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.black)),
+                      onPressed: () {},
+                      child: const Text(
+                        "Upload Image",
+                        style: TextStyle(fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: const [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "(Optional)",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w100,
+                                fontSize: 10,
+                                color: Colors.grey),
+                          ),
+                        ),
+                        Text(
+                          "\t (Image size must not exceed 2MB.)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 10,
+                              color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               Row(
                 children: <Widget>[
                   Checkbox(
@@ -94,7 +138,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   InkWell(
                     onTap: () {},
                     child: const Text(
-                      "I agree to the terms and conditions \n regarding complaint registration.",
+                      "I agree to the terms and conditions \n regarding registration.",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                       ),
@@ -118,13 +162,24 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                     onPressed: termsAndConditionCheckbox == true ? () {} : null,
                     child: const Text(
                       "Submit",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
               ),
               const Divider(height: 50),
-              const Copyright(),
+              Column(
+                children: const [
+                  Text("Disclaimer: Copyright © 2022"),
+                  Text("Malaviya National Institute of Technology Jaipur"),
+                  Divider(
+                    thickness: 0.0001,
+                    height: 20,
+                  )
+                ],
+              ),
             ],
           ),
         ),

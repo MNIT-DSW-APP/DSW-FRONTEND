@@ -3,8 +3,11 @@ import 'package:dswapp/models/user.dart';
 import 'package:dswapp/providers/complaint_providers.dart';
 import 'package:dswapp/screens/about_dsw_screen.dart';
 import 'package:dswapp/screens/about_societies_screen.dart';
+import 'package:dswapp/screens/admin/certifications_screen.dart';
 import 'package:dswapp/screens/admin/complaint_detail_screen.dart';
 import 'package:dswapp/screens/admin/complaint_screen.dart';
+import 'package:dswapp/screens/admin/give_club_points_screen.dart';
+import 'package:dswapp/screens/admin/give_student_points_screen.dart';
 import 'package:dswapp/screens/admin/resolve_complaint_screen.dart';
 import 'package:dswapp/screens/admin_screen.dart';
 import 'package:dswapp/screens/announcements_control_screen.dart';
@@ -23,9 +26,10 @@ import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
 import 'package:dswapp/screens/question_answer_screen.dart';
-import 'package:dswapp/screens/register_complaint_screen.dart';
-import 'package:dswapp/screens/register_lost_and_found.dart';
+import 'package:dswapp/screens/user/register_complaint_screen.dart';
+import 'package:dswapp/screens/user/register_lost_and_found.dart';
 import 'package:dswapp/screens/user/certificates_screen.dart';
+import 'package:dswapp/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -92,7 +96,16 @@ class MyApp extends StatelessWidget {
           ComplaintRegisterScreen.routeName: ((context) =>
               ComplaintRegisterScreen()),
           LostAndFoundRegisterScreen.routeName: ((context) =>
-              LostAndFoundRegisterScreen())
+              LostAndFoundRegisterScreen()),
+          GiveClubPointsScreen.routeName: (context) => GiveClubPointsScreen(),
+          GiveStudentPointsScreen.routeName: (context) =>
+              GiveStudentPointsScreen(),
+          CertificationsScreen.routeName: (context) => CertificationsScreen(),
+          UserProfileScreen.routeName: (context) => UserProfileScreen(),
+          ComplaintRegisterScreen.routeName: (context) =>
+              ComplaintRegisterScreen(),
+          LostAndFoundRegisterScreen.routeName: (context) =>
+              LostAndFoundRegisterScreen(),
         },
       ),
     );

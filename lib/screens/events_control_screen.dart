@@ -33,7 +33,7 @@ class EventsControlScreen extends StatelessWidget {
             CustomBlackButton(
               title: "Edit hosted event",
               icon: Icons.edit,
-              routename: '/',
+              routename: HostEventScreen.routeName,
             )
           ]),
     ));
