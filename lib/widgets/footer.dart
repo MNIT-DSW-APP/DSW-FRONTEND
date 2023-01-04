@@ -1,32 +1,31 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Footer extends StatelessWidget {
-  Footer({Key? key}) : super(key: key);
+  const Footer({Key? key}) : super(key: key);
 
   final Color yel = GlobalVariables.customYellow;
 
   @override
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: GlobalVariables.customGrey,
       ),
-      height: sz.height + 35,
+      height: sz.height,
       width: sz.width,
       child: Column(
         children: [
           SizedBox(
-            height: 66,
+            height: sz.height * 0.075,
           ),
-          Container(
-            height: 99,
-            width: 99,
+          SizedBox(
+            height: sz.height * 0.12,
+            width: sz.width * 0.23,
             child: Image.asset("lib/assets/images/Mnit_logo.png"),
           ),
           Padding(
@@ -35,7 +34,7 @@ class Footer extends StatelessWidget {
               "Malaviya National Institute of Technology Jaipur",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 15,
+                fontSize: 15 * currScaleFactor,
               ),
             ),
           ),
@@ -45,7 +44,7 @@ class Footer extends StatelessWidget {
               "Jawahar Lal Nehru Marg,",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 15,
+                fontSize: 15 * currScaleFactor,
               ),
             ),
           ),
@@ -55,7 +54,7 @@ class Footer extends StatelessWidget {
               "Jaipur-302017 (Rajasthan) INDIA",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 15,
+                fontSize: 15 * currScaleFactor,
               ),
             ),
           ),
@@ -63,18 +62,18 @@ class Footer extends StatelessWidget {
             "webmaster[at]mnit.ac.in",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 15,
+              fontSize: 15 * currScaleFactor,
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: sz.height * 0.037),
           Text(
             "Have any query?",
-            style: TextStyle(color: yel, fontSize: 20),
+            style: TextStyle(color: yel, fontSize: 20 * currScaleFactor),
             textAlign: TextAlign.left,
           ),
-          SearchBar(),
+          const SearchBar(),
           SizedBox(
-            height: 20,
+            height: sz.height * 0.025,
           ),
           Divider(
             color: yel,
@@ -84,50 +83,46 @@ class Footer extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  Icons.facebook_outlined,
-                  color: yel,
-                  size: 40,
+                SocialMediaIcon(
+                  yel: yel,
+                  iconData: Icons.facebook_outlined,
                 ),
-                Icon(
-                  FontAwesomeIcons.linkedin,
-                  color: yel,
-                  size: 32,
+                SocialMediaIcon(
+                  yel: yel,
+                  iconData: FontAwesomeIcons.linkedin,
                 ),
-                Icon(
-                  FontAwesomeIcons.twitter,
-                  color: yel,
-                  size: 32,
+                SocialMediaIcon(
+                  yel: yel,
+                  iconData: FontAwesomeIcons.twitter,
                 ),
-                Icon(
-                  FontAwesomeIcons.youtube,
-                  color: yel,
-                  size: 32,
+                SocialMediaIcon(
+                  yel: yel,
+                  iconData: FontAwesomeIcons.youtube,
                 ),
-                Icon(
-                  FontAwesomeIcons.instagram,
-                  color: yel,
-                  size: 32,
+                SocialMediaIcon(
+                  yel: yel,
+                  iconData: FontAwesomeIcons.instagram,
                 ),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 30, left: 50, right: 50),
+            padding:
+                EdgeInsets.only(top: sz.height * 0.03, left: 50, right: 50),
             child: Row(
               children: [
                 Text(
                   "Visit - ",
                   style: TextStyle(
                     color: yel,
-                    fontSize: 20,
+                    fontSize: 20 * currScaleFactor,
                   ),
                 ),
                 Text(
                   "mnit.ac.in | mniterp.org",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 20 * currScaleFactor,
                     fontWeight: FontWeight.w500,
                   ),
                 )
@@ -149,7 +144,7 @@ class Footer extends StatelessWidget {
                     "dswmnitj@mnit.ac.in",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 18 * currScaleFactor,
                         fontWeight: FontWeight.w300),
                   ),
                 ),
@@ -171,22 +166,42 @@ class Footer extends StatelessWidget {
                     "+0123-456-780, +123-456-787",
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 18 * currScaleFactor,
                         fontWeight: FontWeight.w300),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           FloatingActionButton(
             onPressed: (() {}),
-            child: Icon(Icons.arrow_upward_outlined),
+            child: const Icon(Icons.arrow_upward_outlined),
           ),
         ],
       ),
+    );
+  }
+}
+
+class SocialMediaIcon extends StatelessWidget {
+  const SocialMediaIcon({
+    Key? key,
+    required this.yel,
+    required this.iconData,
+  }) : super(key: key);
+
+  final Color yel;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      iconData,
+      color: yel,
+      size: MediaQuery.of(context).size.height * 0.04,
     );
   }
 }

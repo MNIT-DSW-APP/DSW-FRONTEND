@@ -15,10 +15,11 @@ class Intro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     Size sz = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.all(15),
-      height: sz.height - 40.0,
+      height: sz.height * 0.95,
       width: sz.width,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -33,18 +34,18 @@ class Intro extends StatelessWidget {
             "Dean Student's Welfare",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 45,
+              fontSize: 45 * currScaleFactor,
             ),
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: 40,
+            height: sz.height * 0.05,
           ),
           Text(
             info,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 18 * currScaleFactor,
               fontWeight: FontWeight.w300,
               wordSpacing: 1.8,
               letterSpacing: 1.5,
@@ -53,18 +54,21 @@ class Intro extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           SizedBox(
-            height: 65,
+            height: sz.height * 0.069,
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
                 primary: GlobalVariables.customYellow,
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 15,
+                )),
             onPressed: () {
               Navigator.of(context).pushNamed(AboutDSWScreen.routeName);
             },
             child: Text(
               "Know More",
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20 * currScaleFactor),
             ),
           ),
         ],

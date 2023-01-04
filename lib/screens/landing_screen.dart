@@ -15,6 +15,8 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size sz = MediaQuery.of(context).size;
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     return SafeArea(
       child: Scaffold(
         appBar: const CustomAppBar(),
@@ -26,7 +28,7 @@ class LandingScreen extends StatelessWidget {
             children: [
               Intro(),
               SizedBox(
-                height: 40,
+                height: sz.height * 0.05,
                 width: MediaQuery.of(context).size.width,
                 child: const DecoratedBox(
                   decoration: BoxDecoration(color: GlobalVariables.customGrey),
@@ -36,13 +38,13 @@ class LandingScreen extends StatelessWidget {
               MagzineCard(),
               const Divider(),
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   text: "Student ",
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 32,
+                    fontSize: 32 * currScaleFactor,
                   ),
-                  children: [
+                  children: const [
                     TextSpan(
                         text: "Welfare",
                         style: TextStyle(
@@ -57,7 +59,7 @@ class LandingScreen extends StatelessWidget {
               const SizedBox(
                 width: 110,
               ),
-              Footer(),
+              const Footer(),
             ],
           ),
         ),
