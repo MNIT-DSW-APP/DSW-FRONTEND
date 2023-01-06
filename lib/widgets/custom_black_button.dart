@@ -18,7 +18,7 @@ class CustomBlackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
     return Container(
-      height: sz.height*0.14,
+      height: sz.height*0.095,
       width: sz.width*0.9,
       margin: const EdgeInsets.symmetric(
         horizontal: 20,
@@ -31,7 +31,7 @@ class CustomBlackButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: GlobalVariables.customGrey,
           padding: const EdgeInsets.symmetric(
-            vertical: 25,
+            vertical: 0,
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
@@ -46,7 +46,9 @@ class CustomBlackButton extends StatelessWidget {
               size: 22,
               color: Colors.white,
             ),
-            const Spacer(),
+            SizedBox(
+              height: sz.height*0.01,
+            ),
             Text(
               title,
               style: const TextStyle(
