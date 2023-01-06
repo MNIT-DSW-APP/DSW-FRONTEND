@@ -9,11 +9,12 @@ class MagzineCardCrescendo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
+    Size sz = MediaQuery.of(context).size;
     return Card(
       margin: EdgeInsets.all(width*0.05),
       child: Container(
-        width: 220,
-        height: 350,
+        width: sz.width*0.535,
+        height: sz.height*0.52,
         child: Stack(
           children: [
             Positioned(
@@ -47,7 +48,7 @@ class MagzineCardCrescendo extends StatelessWidget {
             ),
 
             Positioned(
-              top: 310,
+              top: 300,
               left: 10,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

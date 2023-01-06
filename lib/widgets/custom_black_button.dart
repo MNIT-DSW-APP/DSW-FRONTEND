@@ -16,9 +16,10 @@ class CustomBlackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size sz = MediaQuery.of(context).size;
     return Container(
-      height: 110,
-      width: 390,
+      height: sz.height*0.14,
+      width: sz.width*0.9,
       margin: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 30,
@@ -42,7 +43,7 @@ class CustomBlackButton extends StatelessWidget {
           children: [
             Icon(
               icon,
-              size: 24,
+              size: 22,
               color: Colors.white,
             ),
             const Spacer(),
@@ -50,7 +51,7 @@ class CustomBlackButton extends StatelessWidget {
               title,
               style: const TextStyle(
                 color: Colors.white,
-                fontSize: 18.5,
+                fontSize: 15.5,
               ),
               textAlign: TextAlign.center,
             ),
