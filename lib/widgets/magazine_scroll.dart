@@ -12,6 +12,7 @@ class MagazineScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     Size sz = MediaQuery.of(context).size;
     return Container(
       margin: new EdgeInsets.symmetric(horizontal: sz.height*0.01),
@@ -41,7 +42,7 @@ class MagazineScroll extends StatelessWidget {
               "AluMNITimes",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: sz.width*0.03,
+                fontSize: 12*currScaleFactor,
                 fontWeight: FontWeight.w700,
                 wordSpacing: 1.8,
                 letterSpacing: 1.5,
@@ -63,7 +64,7 @@ class MagazineScroll extends StatelessWidget {
               "Alumni News:Latest and Breaking News on alumni.Explore alumni profile of Times of India for photos ,videos and latest news of alumni",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: sz.height*0.01,
+                fontSize: 7*currScaleFactor,
                 fontWeight: FontWeight.w300,
                 wordSpacing: 1.8,
                 letterSpacing: 1.5,
@@ -94,7 +95,7 @@ class MagazineScroll extends StatelessWidget {
               },
               child: Text(
                 "Download",
-                style: TextStyle(fontSize: sz.height*0.01,color: Colors.black,fontWeight:FontWeight.w500),
+                style: TextStyle(fontSize:8*currScaleFactor,color: Colors.black,fontWeight:FontWeight.w500),
               ),
             ),
           )

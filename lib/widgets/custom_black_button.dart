@@ -16,9 +16,10 @@ class CustomBlackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     Size sz = MediaQuery.of(context).size;
     return Container(
-      height: sz.height*0.095,
+      height: sz.height*0.088,
       width: sz.width*0.9,
       margin: const EdgeInsets.symmetric(
         horizontal: 20,
@@ -47,7 +48,7 @@ class CustomBlackButton extends StatelessWidget {
               color: Colors.white,
             ),
             SizedBox(
-              height: sz.height*0.01,
+              height: sz.height*0.009,
             ),
             Text(
               title,

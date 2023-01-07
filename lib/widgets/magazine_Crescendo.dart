@@ -34,7 +34,7 @@ class MagzineCardCrescendo extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 270,
+              top: 280,
               left: 10,
               right:10,
               child: Text(
@@ -48,7 +48,7 @@ class MagzineCardCrescendo extends StatelessWidget {
             ),
 
             Positioned(
-              top: 300,
+              top: 310,
               left: 10,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(

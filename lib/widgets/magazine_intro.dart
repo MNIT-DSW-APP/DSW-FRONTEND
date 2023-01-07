@@ -12,6 +12,7 @@ class MagazineIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     return Container(
       padding: EdgeInsets.all(15),
       height: sz.height*0.3,
@@ -33,7 +34,7 @@ class MagazineIntro extends StatelessWidget {
               "Magazine",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: sz.height*0.055,
+                fontSize: 32*currScaleFactor,
               ),
               textAlign: TextAlign.left,
             ),
@@ -43,19 +44,6 @@ class MagazineIntro extends StatelessWidget {
           SizedBox(
             height: 50,
           ),
-          // ElevatedButton(
-          //   style: ElevatedButton.styleFrom(
-          //       primary: GlobalVariables.customYellow,
-          //       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
-          //   onPressed: () {},
-          //   child: Text(
-          //     "Know More",
-          //     style: TextStyle(fontSize: 20),
-          //   ),
-          // ),
-
-
-
           Container(
             height: sz.height*0.05,
             //margin:
@@ -64,7 +52,7 @@ class MagazineIntro extends StatelessWidget {
 
               textAlign: TextAlign.start,
 
-              style: TextStyle( fontSize:sz.height*0.02 ),
+              style: TextStyle( fontSize:14*currScaleFactor ),
 
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(vertical: sz.height*.01,horizontal: sz.height*0.01),
