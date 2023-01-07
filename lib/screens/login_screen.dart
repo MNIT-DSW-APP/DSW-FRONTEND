@@ -92,7 +92,7 @@ Widget buildPassword() {
               return null;
             },
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black87,
             ),
             decoration: InputDecoration(
@@ -127,21 +127,22 @@ class _LogInScreenState extends State<LogInScreen> {
         child: Scaffold(
       appBar: const CustomAppBar(),
       endDrawer: NavigationDrawer(),
-      body: Container(
-        height: sz.height,
-        width: sz.width,
-        margin: const EdgeInsets.only(left: 25, right: 25, top: 30, bottom: 30),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: Colors.white,
-          boxShadow: const [
-            BoxShadow(
-              blurRadius: 3.0,
-              color: Color.fromARGB(172, 158, 158, 158),
-            ),
-          ],
-        ),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          height: sz.height,
+          width: sz.width,
+          margin:
+              const EdgeInsets.only(left: 25, right: 25, top: 30, bottom: 30),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 3.0,
+                color: Color.fromARGB(172, 158, 158, 158),
+              ),
+            ],
+          ),
           child: Form(
             key: _loginFormKey,
             child: Column(

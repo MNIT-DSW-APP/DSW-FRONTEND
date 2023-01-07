@@ -18,7 +18,6 @@ import 'package:dswapp/screens/complaints_control_screen.dart';
 import 'package:dswapp/screens/events_control_screen.dart';
 import 'package:dswapp/screens/events_screen.dart';
 import 'package:dswapp/screens/host_event_screen.dart';
-import 'package:dswapp/screens/landing_screen.dart';
 import 'package:dswapp/screens/login_screen.dart';
 import 'package:dswapp/screens/lost_and_found_screen.dart';
 import 'package:dswapp/screens/magazine_screen.dart';
@@ -65,7 +64,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(secondary: GlobalVariables.customYellow),
         ),
-        home: const LandingScreen(),
+        home: const LogInScreen(),
         routes: {
           PanelScreen.routeName: (context) => PanelScreen(),
           LostAndFoundScreen.routeName: (context) => LostAndFoundScreen(),

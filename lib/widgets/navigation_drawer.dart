@@ -50,7 +50,7 @@ class NavigationDrawer extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          height: double.infinity,
+          // height: double.infinity,
           color: GlobalVariables.navBarCol,
           child: SingleChildScrollView(
               child: Column(children: [

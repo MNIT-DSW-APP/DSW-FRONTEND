@@ -19,8 +19,8 @@ class CustomBlackButton extends StatelessWidget {
     final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     Size sz = MediaQuery.of(context).size;
     return Container(
-      height: sz.height*0.088,
-      width: sz.width*0.9,
+      height: sz.height * 0.088,
+      width: sz.width * 0.9,
       margin: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 30,
@@ -48,13 +48,13 @@ class CustomBlackButton extends StatelessWidget {
               color: Colors.white,
             ),
             SizedBox(
-              height: sz.height*0.009,
+              height: sz.height * 0.009,
             ),
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 15.5,
+                fontSize: 15.5 * currScaleFactor,
               ),
               textAlign: TextAlign.center,
             ),
