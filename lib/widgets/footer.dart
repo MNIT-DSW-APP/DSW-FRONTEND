@@ -29,7 +29,8 @@ class Footer extends StatelessWidget {
             child: Image.asset("lib/assets/images/Mnit_logo.png"),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+            padding: EdgeInsets.only(
+                top: 20, left: sz.width * 0.034, right: sz.width * 0.034),
             child: Text(
               "Malaviya National Institute of Technology Jaipur",
               style: TextStyle(
@@ -79,7 +80,8 @@ class Footer extends StatelessWidget {
             color: yel,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10, left: 50, right: 50),
+            padding: EdgeInsets.only(
+                top: 10, left: sz.width * 0.116, right: sz.width * 0.116),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -107,8 +109,11 @@ class Footer extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(top: sz.height * 0.03, left: 50, right: 50),
+            padding: EdgeInsets.only(
+              top: sz.height * 0.03,
+              left: sz.width * 0.116,
+              right: sz.width * 0.116,
+            ),
             child: Row(
               children: [
                 Text(
@@ -135,11 +140,11 @@ class Footer extends StatelessWidget {
               children: [
                 Icon(
                   Icons.mail,
-                  size: 32,
+                  size: sz.height * 0.04,
                   color: yel,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(left: sz.width * 0.058),
                   child: Text(
                     "dswmnitj@mnit.ac.in",
                     style: TextStyle(
@@ -152,16 +157,16 @@ class Footer extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 30, left: 50),
+            padding: EdgeInsets.only(top: 30, left: sz.width * 0.116),
             child: Row(
               children: [
                 Icon(
                   Icons.call,
-                  size: 32,
+                  size: sz.height * 0.04,
                   color: yel,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25),
+                  padding: EdgeInsets.only(left: sz.width * 0.058),
                   child: Text(
                     "+0123-456-780, +123-456-787",
                     style: TextStyle(

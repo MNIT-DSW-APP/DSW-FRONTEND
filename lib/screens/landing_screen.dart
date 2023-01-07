@@ -1,4 +1,5 @@
 import 'package:dswapp/widgets/aboutdsw_card.dart';
+import 'package:dswapp/widgets/copyright.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/footer.dart';
 import 'package:dswapp/widgets/intro.dart';
@@ -60,6 +61,7 @@ class LandingScreen extends StatelessWidget {
                 width: 110,
               ),
               const Footer(),
+              const Copyright(),
             ],
           ),
         ),
