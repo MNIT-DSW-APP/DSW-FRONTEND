@@ -56,13 +56,14 @@ class MagazineScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 70,
+                height:  MediaQuery.of(context).size.height*0.05,
               ),
 
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 30),
+                margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.height*0.005),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
+
                   child: Row(children: [
                     MagazineScroll(),
                     MagazineScroll(),

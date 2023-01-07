@@ -12,12 +12,13 @@ class MagazineScroll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     Size sz = MediaQuery.of(context).size;
     return Container(
-      margin: new EdgeInsets.symmetric(horizontal: 50.0),
-      padding: EdgeInsets.all(15),
-      height: sz.height - 350.0,
-      width: sz.width-100,
+      margin: new EdgeInsets.symmetric(horizontal: sz.height*0.01),
+      padding: EdgeInsets.all(sz.height*0.02),
+      height: sz.height*0.2,
+      width: sz.width*0.95,
       decoration: BoxDecoration(
 
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -35,13 +36,13 @@ class MagazineScroll extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 600,
+            width: sz.width*0.6,
             //alignment: Alignment(-0.9,0),
             child: Text(
               "AluMNITimes",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 34,
+                fontSize: 12*currScaleFactor,
                 fontWeight: FontWeight.w700,
                 wordSpacing: 1.8,
                 letterSpacing: 1.5,
@@ -53,17 +54,17 @@ class MagazineScroll extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: sz.height*0.01,
           ),
           Container(
-            width: 600,
+            width: sz.width*0.6,
             alignment: Alignment(-0.9,0),
             child: Text(
 
               "Alumni News:Latest and Breaking News on alumni.Explore alumni profile of Times of India for photos ,videos and latest news of alumni",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18,
+                fontSize: 7*currScaleFactor,
                 fontWeight: FontWeight.w300,
                 wordSpacing: 1.8,
                 letterSpacing: 1.5,
@@ -76,10 +77,10 @@ class MagazineScroll extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: sz.height*0.02,
           ),
           Container(
-            height: 50,
+            height: sz.height*0.04,
             decoration: BoxDecoration(
 
 
@@ -94,7 +95,7 @@ class MagazineScroll extends StatelessWidget {
               },
               child: Text(
                 "Download",
-                style: TextStyle(fontSize: 20,color: Colors.black,fontWeight:FontWeight.w500),
+                style: TextStyle(fontSize:8*currScaleFactor,color: Colors.black,fontWeight:FontWeight.w500),
               ),
             ),
           )

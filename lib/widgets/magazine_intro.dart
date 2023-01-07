@@ -12,9 +12,10 @@ class MagazineIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     return Container(
       padding: EdgeInsets.all(15),
-      height: sz.height - 300.0,
+      height: sz.height*0.3,
       width: sz.width,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -27,13 +28,13 @@ class MagazineIntro extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.all(40),
+            margin: EdgeInsets.all(sz.height*.004),
             child:
             Text(
               "Magazine",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 38,
+                fontSize: 32*currScaleFactor,
               ),
               textAlign: TextAlign.left,
             ),
@@ -41,37 +42,28 @@ class MagazineIntro extends StatelessWidget {
 
 
           SizedBox(
-            height: 40,
+            height: 50,
           ),
-          // ElevatedButton(
-          //   style: ElevatedButton.styleFrom(
-          //       primary: GlobalVariables.customYellow,
-          //       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
-          //   onPressed: () {},
-          //   child: Text(
-          //     "Know More",
-          //     style: TextStyle(fontSize: 20),
-          //   ),
-          // ),
-
-
-
           Container(
-            //margin: ,
-
-
-            margin: new EdgeInsets.symmetric(horizontal: 100.0),
+            height: sz.height*0.05,
+            //margin:
+            margin: new EdgeInsets.symmetric(horizontal: sz.height*0.075),
             child: TextField(
 
+              textAlign: TextAlign.start,
+
+              style: TextStyle( fontSize:14*currScaleFactor ),
 
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(vertical: sz.height*.01,horizontal: sz.height*0.01),
                 filled: true,
                 fillColor: Color(0xffffffff),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(10.0),
                   borderSide: BorderSide.none,
                 ),
                 hintText:"Search Magazine",
+
                 suffixIcon: Icon(Icons.search),
 
               ),
