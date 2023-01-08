@@ -71,7 +71,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                           title: Text(
                             item.question,
                             style: const TextStyle(
-                              fontSize: 10,
+                              fontSize: 20,
                             ),
                           ),
                         ),
@@ -100,74 +100,83 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
-                child: Center(
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(top: 15.0),
-                        child: Text(
-                          "Still have questions?",
-                          style: TextStyle(fontSize: 25),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 1.0, bottom: 1.0),
-                        child: Text(
-                          "Can't find the answer you're looking for? \n \t \t \t \t \t \t Please ask your question.",
-                          style: TextStyle(
-                              fontSize: 10, fontWeight: FontWeight.w200),
-                        ),
-                      ),
-                      Form(
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        key: questionKey,
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 15.0, bottom: 15.0, left: 10.0, right: 10.0),
-                          child: TextFormField(
-                            controller: _questionInputTextController,
-                            keyboardType: TextInputType.multiline,
-                            decoration: const InputDecoration(
-                                hintText: "Ask something...",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                                border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                ),
-                            ),
-                            validator: (questionFromInput) {
-                              if (questionFromInput!.isEmpty) {
-                                return "Can't be Empty.";
-                              } else {
-                                return null;
-                              }
-                            },
-                            maxLines: 10,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 1.0, bottom: 1.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            "Still have questions?",
+                            style: TextStyle(fontSize: 25),
                           ),
-                        ),
+                          Text("Can't find the answer you're looking for?",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black45,
+                                fontWeight: FontWeight.w100),
+                          ),
+                          Text("Please ask your question.",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black45,
+                                fontWeight: FontWeight.w100),
+                          ),
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 12.0),
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.yellow),
-                              foregroundColor:
-                                  MaterialStateProperty.all(Colors.black)),
-                          onPressed: () {
-                            final isValidForm =
-                                questionKey.currentState!.validate();
-                            if (isValidForm) {
-                              return;
+                    ),
+                    Form(
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      key: questionKey,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 20),
+                        child: TextFormField(
+                          controller: _questionInputTextController,
+                          keyboardType: TextInputType.multiline,
+                          decoration: const InputDecoration(
+                              hintText: "Ask something...",
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                              ),
+                          ),
+                          validator: (questionFromInput) {
+                            if (questionFromInput!.isEmpty) {
+                              return "Can't be Empty.";
+                            } else {
+                              return null;
                             }
                           },
-                          child: const Text("Send"),
+                          maxLines: 10,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12.0),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all(const Size(200, 50)),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.yellow),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.black)),
+                        onPressed: () {
+                          final isValidForm =
+                              questionKey.currentState!.validate();
+                          if (isValidForm) {
+                            return;
+                          }
+                        },
+                        child: const Text("Send",
+                        style: TextStyle(fontSize: 20),),
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],

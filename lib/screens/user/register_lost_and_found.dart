@@ -1,6 +1,8 @@
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/copyright.dart';
+
 class LostAndFoundRegisterScreen extends StatefulWidget {
   const LostAndFoundRegisterScreen({Key? key}) : super(key: key);
   static const routeName = '/lost-and-found_registration';
@@ -29,7 +31,7 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Title",
-                      labelStyle: TextStyle(color: Colors.black),
+                      labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
                       hintText: "Enter Title...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -59,7 +61,7 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Description",
-                      labelStyle: TextStyle(color: Colors.black),
+                      labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
                       hintText: "Enter description...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -104,20 +106,19 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
                         Align(
-                          alignment: Alignment.topLeft,
                           child: Text(
                             "(Optional)",
                             style: TextStyle(
                                 fontWeight: FontWeight.w100,
-                                fontSize: 10,
+                                fontSize: 9,
                                 color: Colors.grey),
                           ),
                         ),
                         Text(
-                          "\t (Image size must not exceed 2MB.)",
+                          "\t(Image size must not exceed 2MB)",
                           style: TextStyle(
                               fontWeight: FontWeight.w300,
-                              fontSize: 10,
+                              fontSize: 8.5,
                               color: Colors.black87),
                         ),
                       ],
@@ -141,6 +142,7 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                       "I agree to the terms and conditions \n regarding registration.",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
+                        fontSize: 13,
                       ),
                     ),
                   ),
@@ -170,16 +172,7 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                 ),
               ),
               const Divider(height: 50),
-              Column(
-                children: const [
-                  Text("Disclaimer: Copyright © 2022"),
-                  Text("Malaviya National Institute of Technology Jaipur"),
-                  Divider(
-                    thickness: 0.0001,
-                    height: 20,
-                  )
-                ],
-              ),
+              const Copyright(),
             ],
           ),
         ),

@@ -1,6 +1,8 @@
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/copyright.dart';
+
 class AnnouncementsControlScreen extends StatefulWidget {
   const AnnouncementsControlScreen({Key? key}) : super(key: key);
   static const routeName = '/announcements_control';
@@ -27,7 +29,7 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Title",
-                      labelStyle: TextStyle(color: Colors.black),
+                      labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
                       hintText: "Enter Title...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -58,7 +60,7 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
                       keyboardType: TextInputType.multiline,
                       decoration: const InputDecoration(
                         labelText: "Announcement",
-                        labelStyle: TextStyle(color: Colors.black),
+                        labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
                         hintText: "Announce...",
                         hintStyle: TextStyle(
                           color: Colors.grey,
@@ -97,6 +99,7 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
                     child: const Text("I agree to the terms and conditions \n regarding announcement.",
                     style: TextStyle(
                       decoration: TextDecoration.underline,
+                      fontSize: 13,
                     ),),
                   ),
                 ],
@@ -122,13 +125,7 @@ class _AnnouncementsControlScreenState extends State<AnnouncementsControlScreen>
                 ),
               ),
               const Divider(height: 50),
-              Column(
-                children: const [
-                  Text("Disclaimer: Copyright © 2022"),
-                  Text("Malaviya National Institute of Technology Jaipur"),
-                  Divider(thickness: 0.0001, height: 20,)
-                ],
-              ),
+              const Copyright(),
             ],
           ),
         ),

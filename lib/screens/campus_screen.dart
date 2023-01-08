@@ -52,11 +52,10 @@ class _CampusScreenState extends State<CampusScreen> {
         isLive: false,
         hideThumbnail: false,
         disableDragSeek: false,
-        enableCaption: true,
-        captionLanguage: "en ",
+        enableCaption: false,
         loop: false,
         useHybridComposition: false,
-        forceHD: true,
+        forceHD: false,
         showLiveFullscreenButton: false,
       ),
     );
