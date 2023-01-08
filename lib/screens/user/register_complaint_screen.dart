@@ -110,7 +110,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Description",
-                      labelStyle: TextStyle(color: Colors.black),
+                      labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
                       hintText: "Enter description...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -148,6 +148,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                       "I agree to the terms and conditions \n regarding complaint registration.",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
+                        fontSize: 13,
                       ),
                     ),
                   ),
