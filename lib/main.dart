@@ -25,6 +25,7 @@ import 'package:dswapp/screens/notifications_screen.dart';
 import 'package:dswapp/screens/panels_screen.dart';
 import 'package:dswapp/screens/points_control_screen.dart';
 import 'package:dswapp/screens/question_answer_screen.dart';
+import 'package:dswapp/screens/signup_screen.dart';
 import 'package:dswapp/screens/user/register_complaint_screen.dart';
 import 'package:dswapp/screens/user/register_lost_and_found.dart';
 import 'package:dswapp/screens/user/certificates_screen.dart';
@@ -53,18 +54,23 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'DSW App',
         theme: ThemeData(
-          primaryColor: GlobalVariables.customGrey,
-          fontFamily: 'Lato',
-          dividerTheme: const DividerThemeData(
-            color: Color.fromRGBO(167, 167, 167, 1),
-            space: 35,
-            indent: 40,
-            endIndent: 50,
-          ),
-          colorScheme: ColorScheme.fromSwatch()
-              .copyWith(secondary: GlobalVariables.customYellow),
-        ),
-        home: const LogInScreen(),
+            primaryColor: GlobalVariables.customGrey,
+            fontFamily: 'Lato',
+            dividerTheme: const DividerThemeData(
+              color: Color.fromRGBO(167, 167, 167, 1),
+              space: 35,
+              indent: 40,
+              endIndent: 50,
+            ),
+            colorScheme: ColorScheme.fromSwatch()
+                .copyWith(secondary: GlobalVariables.customYellow),
+            textTheme: const TextTheme(
+                bodyText1: TextStyle(
+              color: GlobalVariables.customGrey,
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+            ))),
+        home: SignUpScreen(),
         routes: {
           PanelScreen.routeName: (context) => PanelScreen(),
           LostAndFoundScreen.routeName: (context) => LostAndFoundScreen(),
@@ -105,6 +111,7 @@ class MyApp extends StatelessWidget {
               ComplaintRegisterScreen(),
           LostAndFoundRegisterScreen.routeName: (context) =>
               LostAndFoundRegisterScreen(),
+          SignUpScreen.routeName: (context) => SignUpScreen(),
         },
       ),
     );

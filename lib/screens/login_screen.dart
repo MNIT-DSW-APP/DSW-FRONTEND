@@ -1,5 +1,6 @@
 import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/screens/admin_screen.dart';
+import 'package:dswapp/screens/signup_screen.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
@@ -95,7 +96,7 @@ Widget buildPassword() {
             style: const TextStyle(
               color: Colors.black87,
             ),
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 contentPadding: EdgeInsets.only(top: 14),
                 border: InputBorder.none,
                 prefixIcon: Icon(Icons.password_outlined),
@@ -173,6 +174,15 @@ class _LogInScreenState extends State<LogInScreen> {
                   padding: EdgeInsets.all(20.0),
                   child: Text(
                     "Forgot / Reset Password?",
+                    style: TextStyle(
+                        color: GlobalVariables.customGrey, fontSize: 15),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(SignUpScreen.routeName),
+                  child: const Text(
+                    "Create an account",
                     style: TextStyle(
                         color: GlobalVariables.customGrey, fontSize: 15),
                   ),
