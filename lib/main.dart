@@ -12,6 +12,7 @@ import 'package:dswapp/screens/admin/resolve_complaint_screen.dart';
 import 'package:dswapp/screens/admin_screen.dart';
 import 'package:dswapp/screens/announcements_control_screen.dart';
 import 'package:dswapp/screens/campus_screen.dart';
+import 'package:dswapp/screens/category_filter_model.dart';
 import 'package:dswapp/screens/certifications_control_screen.dart';
 import 'package:dswapp/screens/club_details_screen.dart';
 import 'package:dswapp/screens/complaints_control_screen.dart';
@@ -112,6 +113,7 @@ class MyApp extends StatelessWidget {
           LostAndFoundRegisterScreen.routeName: (context) =>
               LostAndFoundRegisterScreen(),
           SignUpScreen.routeName: (context) => SignUpScreen(),
+          FilterScreen.routeName: (context) => FilterScreen(),
         },
       ),
     );
