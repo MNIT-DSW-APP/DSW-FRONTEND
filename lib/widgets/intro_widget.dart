@@ -42,11 +42,9 @@ class IntroWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 40,
+            height: 100,
           ),
           Container(
-            //margin: ,
-
             margin: const EdgeInsets.symmetric(horizontal: 30.0),
             child: TextField(
               decoration: InputDecoration(

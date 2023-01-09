@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-import '../constants/global_variables.dart';
 
 class MagazineScroll extends StatelessWidget {
   MagazineScroll({Key? key}) : super(key: key);
@@ -17,7 +16,7 @@ class MagazineScroll extends StatelessWidget {
     return Container(
       margin: new EdgeInsets.symmetric(horizontal: sz.height*0.01),
       padding: EdgeInsets.all(sz.height*0.02),
-      height: sz.height*0.2,
+      height: sz.height*0.22,
       width: sz.width*0.95,
       decoration: BoxDecoration(
 

@@ -70,37 +70,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/images/Mnit_logo.png
-    - lib/assets/images/bg_image_landing_page.png
-    - lib/assets/images/carousel_image1.png
-    - lib/assets/images/lost_found.png
-    - lib/assets/images/magzine.png
-    - lib/assets/images/magazine_scroll.png
-    - lib/assets/images/magazine_sanidhya.jpg
-    - lib/assets/images/magazine__banner.jpeg
-    - lib/assets/images/login_panel.png
-    - lib/assets/images/the_mavericks.png
-    - lib/assets/images/emc2.png
-    - lib/assets/images/think_india.png
-    - lib/assets/images/user.jpg
-    - lib/assets/images/faqs.jpg
-    - lib/assets/images/apartments_cl.jpg
-    - lib/assets/images/canteen_cl.jpg
-    - lib/assets/images/ganga_cl.jpg
-    - lib/assets/images/miic_cl.jpg
-    - lib/assets/images/prabha_cl.jpg
-    - lib/assets/images/vltc1_cl.jpg
-    - lib/assets/images/bank_screen.jpg
-    - lib/assets/images/canteen_screen.jpg
-    - lib/assets/images/digital_infrastructure_screen.jpg
-    - lib/assets/images/guest_house_screen.jpg
-    - lib/assets/images/library_screen.jpg
-    - lib/assets/images/medical_facilities_screen.jpg
-    - lib/assets/images/post_office_screen.png
-    - lib/assets/images/shopping_complex_screen.jpg
-    - lib/assets/images/sports_screen.jpg
-    - lib/assets/images/demo_certificate.png
-    - lib/assets/images/xls.png
+    - lib/assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

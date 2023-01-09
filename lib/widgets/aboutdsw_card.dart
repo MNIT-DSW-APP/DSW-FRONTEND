@@ -8,7 +8,6 @@ class AboutDSWCArd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
     return Card(
       margin: EdgeInsets.all(width * 0.05),
       child: Container(
@@ -26,6 +25,7 @@ class AboutDSWCArd extends StatelessWidget {
               alignment: BadgeAlignment.bottomLeft,
             )),
         child: Stack(
+          fit: StackFit.loose,
           children: [
             const Positioned(
               top: 25,
@@ -54,7 +54,6 @@ class AboutDSWCArd extends StatelessWidget {
                     wordSpacing: 1.5,
                     height: 1.5,
                   ),
-                  overflow: TextOverflow.clip,
                 ),
               ),
             ),

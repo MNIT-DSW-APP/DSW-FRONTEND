@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/global_variables.dart';
+import '../../widgets/chip_data.dart';
 
 class CertificationsScreen extends StatefulWidget {
   static const routeName = '/certifications';
@@ -15,6 +18,14 @@ class CertificationsScreen extends StatefulWidget {
 
 class _CertificationsScreenState extends State<CertificationsScreen> {
   var dropDownInitialValue = "Appreciation 1";
+
+  final List<Chipdata> _chipList = [];
+  final TextEditingController _chipText = TextEditingController();
+  void deleteChips(String title){
+    setState(() {
+      _chipList.removeWhere((element) => element.title == title);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -88,25 +99,41 @@ class _CertificationsScreenState extends State<CertificationsScreen> {
               const Divider(
                 thickness: .5,
               ),
+              Wrap(
+                spacing: 5,
+                children: _chipList.map((chip) => Chip(
+                  label: Text(chip.title, style: TextStyle(fontSize: 12),),
+                  avatar: CircleAvatar(
+                    backgroundColor: Colors.white.withOpacity(0.8),
+                    child: Text(
+                      chip.avText[0],
+                      style: const TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  onDeleted: (){
+                    deleteChips(chip.title);
+                  },
+                  backgroundColor: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                )).toList(),
+              ),
+
               Container(
-                width: 300,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 7,
-                    offset: const Offset(0, 3),
-                  )
-                ]),
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      filled: true,
-                      hintStyle: TextStyle(color: Colors.grey[800]),
-                      hintText: "Add Tags",
-                      fillColor: Colors.white70),
+                margin: EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  children: [
+                    Expanded(child: TextField(
+                      controller: _chipText,
+                      decoration: InputDecoration(border: OutlineInputBorder(),
+                        hintText: "Tags", hintStyle: TextStyle(color: Colors.grey[800]),),
+                    )),
+                    const SizedBox(width: 5,),
+                    ElevatedButton(onPressed: (){
+                      setState(() {
+                        _chipList.add(Chipdata(title: _chipText.text, color: Colors.primaries[Random().nextInt(Colors.primaries.length)], avText: _chipText.text));
+                        _chipText.text = '';
+                      });
+                    }, child: const Text("Add Tags"))
+                  ],
                 ),
               ),
               const Divider(),

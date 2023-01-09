@@ -68,7 +68,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
               Wrap(
                 spacing: 5,
                 children: _chipList.map((chip) => Chip(
-                    label: Text(chip.title),
+                    label: Text(chip.title, style: TextStyle(fontSize: 12),),
                   avatar: CircleAvatar(
                     backgroundColor: Colors.white.withOpacity(0.8),
                     child: Text(
@@ -89,7 +89,8 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   children: [
                     Expanded(child: TextField(
                       controller: _chipText,
-                      decoration: const InputDecoration(border: OutlineInputBorder()),
+                      decoration: InputDecoration(border: OutlineInputBorder(),
+                        hintText: "Tags", hintStyle: TextStyle(color: Colors.grey[800]),),
                     )),
                     const SizedBox(width: 5,),
                     ElevatedButton(onPressed: (){

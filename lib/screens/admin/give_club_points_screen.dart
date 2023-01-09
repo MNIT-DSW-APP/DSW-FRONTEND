@@ -113,9 +113,10 @@ class _GiveClubPointsScreenState extends State<GiveClubPointsScreen> {
                       )),
                   Expanded(
                       child: TextField(
+                        decoration: const InputDecoration(hintText: "00", hintStyle: TextStyle(color: Colors.green)),
                     keyboardType: TextInputType.number,
                     maxLength: 2,
-                    controller: TextEditingController(text: "00"),
+                    controller: TextEditingController(),
                     style: const TextStyle(
                         color: Colors.green,
                         fontSize: 30,
@@ -145,7 +146,9 @@ class _GiveClubPointsScreenState extends State<GiveClubPointsScreen> {
                       "Back",
                       style: TextStyle(color: Colors.black),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
