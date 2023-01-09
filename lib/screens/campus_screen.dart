@@ -46,7 +46,7 @@ class _CampusScreenState extends State<CampusScreen> {
       initialVideoId: videoID!,
       flags: const YoutubePlayerFlags(
         hideControls: false,
-        controlsVisibleAtStart: false,
+        controlsVisibleAtStart: true,
         autoPlay: false,
         mute: false,
         isLive: false,
@@ -142,14 +142,14 @@ class _CampusScreenState extends State<CampusScreen> {
             ),
             const Text(
               "Made Life Easy",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w100),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100),
             ),
             const Padding(
               padding: EdgeInsets.only(bottom: 20.0),
               child: Text(
                 "FOR STUDENTS",
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 23,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey),
               ),
@@ -358,31 +358,34 @@ class _CampusScreenState extends State<CampusScreen> {
             ),
             const Text(
               "From Campus",
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.w100),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100),
             ),
             const Text(
               "LATEST CAMPUS TOUR",
               style: TextStyle(
-                  fontSize: 25,
                   fontWeight: FontWeight.bold,
+                  fontSize: 23,
                   color: Colors.grey),
             ),
-            Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  YoutubePlayer(
-                    controller: _controller,
-                    showVideoProgressIndicator: true,
-                    bottomActions: [
-                      const PlaybackSpeedButton(),
-                      CurrentPosition(),
-                      ProgressBar(
-                        isExpanded: true,
-                      ),
-                    ],
-                  ),
-                ]),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    YoutubePlayer(
+                      controller: _controller,
+                      showVideoProgressIndicator: true,
+                      bottomActions: [
+                        const PlaybackSpeedButton(),
+                        CurrentPosition(),
+                        ProgressBar(
+                          isExpanded: true,
+                        ),
+                      ],
+                    ),
+                  ]),
+            ),
           ]),
         ),
       ),
