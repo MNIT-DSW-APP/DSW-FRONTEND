@@ -2,10 +2,15 @@ import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/screens/magazine_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:rotated_corner_decoration/rotated_corner_decoration.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class MagzineCardSanidhya extends StatelessWidget {
   final String description =
       "As 2021 comes to an end, the Crescendo is here to bid adieu to the year with another editi on full of business insights. We bring you the December edition of MNIT’s official Eco-....";
+
+
+
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
@@ -14,8 +19,8 @@ class MagzineCardSanidhya extends StatelessWidget {
     return Card(
       margin: EdgeInsets.all(width*0.05),
       child: Container(
-        width: sz.width*0.535,
-        height: sz.height*0.51,
+        width: 220,
+        height: 365,
         child: Stack(
           children: [
             Positioned(
@@ -51,22 +56,29 @@ class MagzineCardSanidhya extends StatelessWidget {
             Positioned(
               top: 300,
               left: 10,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Colors.orange,
+              child:
+              InkWell(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        side: const BorderSide(
+                          width: 1.0,
+                          color: Colors.orange,
+                        ),
+                        primary: Colors.white,
+                        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
+                    onPressed: () {
+                    },
+                    child: Text(
+                      "Read Here",
+                      style: TextStyle(fontSize: 10,color: Colors.orange,fontWeight:FontWeight.w400),
                     ),
-                    primary: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
-                onPressed: () {
+                  ),
+                  onTap:()
+                  {
 
-                },
-                child: Text(
-                  "Read Here",
-                  style: TextStyle(fontSize: 10,color: Colors.orange,fontWeight:FontWeight.w400),
-                ),
+                  }
               ),
+
             ),
 
 
@@ -75,4 +87,5 @@ class MagzineCardSanidhya extends StatelessWidget {
       ),
     );
   }
+
 }

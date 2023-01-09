@@ -1,4 +1,5 @@
 import 'package:dswapp/widgets/custom_appbar.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/copyright.dart';
@@ -86,42 +87,70 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-                child: Row(
+                child: Column(
                   children: [
                     ElevatedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black26)),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white30),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.black)),
-                      onPressed: () {},
-                      child: const Text(
-                        "Upload Image",
-                        style: TextStyle(fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
-                        Align(
-                          child: Text(
-                            "(Optional)",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w100,
-                                fontSize: 9,
-                                color: Colors.grey),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.grey.shade100,
+                            padding: EdgeInsets.zero,
+                            elevation: 5),
+                        onPressed: () {},
+                        child: SizedBox(
+                          width: 310,
+                          child: ListTile(
+                            leading: SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: Image.asset("lib/assets/images/upload_image.jpg"),
+                            ),
+                            title: TextButton(
+                              child: const Text(
+                                "Upload Image",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              onPressed: () async {
+                                final result = await FilePicker.platform.pickFiles(
+                                  allowedExtensions: ["png", "jpeg", "jpg", "svg"],
+                                  type: FileType.custom,
+                                );
+                                if (result != null) {
+                                  final fileImage = result.files.first;
+                                  //TODO: implement image opening
+                                } else {
+                                  // User canceled the picker
+                                  return;
+                                }
+                              },
+                            ),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.close),
+                              onPressed: () {},
+                            ),
                           ),
-                        ),
-                        Text(
-                          "\t(Image size must not exceed 2MB)",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w300,
-                              fontSize: 8.5,
-                              color: Colors.black87),
-                        ),
-                      ],
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          Align(
+                            child: Text(
+                              "(Optional)",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w100,
+                                  fontSize: 9,
+                                  color: Colors.grey),
+                            ),
+                          ),
+                          Text(
+                            "(Image size must not exceed 2MB)",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 11,
+                                color: Colors.black87),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

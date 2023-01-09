@@ -68,7 +68,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
               Wrap(
                 spacing: 5,
                 children: _chipList.map((chip) => Chip(
-                    label: Text(chip.title),
+                    label: Text(chip.title, style: TextStyle(fontSize: 12),),
                   avatar: CircleAvatar(
                     backgroundColor: Colors.white.withOpacity(0.8),
                     child: Text(
@@ -89,7 +89,8 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                   children: [
                     Expanded(child: TextField(
                       controller: _chipText,
-                      decoration: const InputDecoration(border: OutlineInputBorder()),
+                      decoration: InputDecoration(border: OutlineInputBorder(),
+                        hintText: "Tags", hintStyle: TextStyle(color: Colors.grey[800]),),
                     )),
                     const SizedBox(width: 5,),
                     ElevatedButton(onPressed: (){
@@ -132,27 +133,29 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                           fontWeight: FontWeight.w100, color: Colors.grey)),
                 ),
               ),
-              Row(
-                children: <Widget>[
-                  Checkbox(
-                    value: termsAndConditionCheckbox,
-                    onChanged: (value) {
-                      setState(() {
-                        termsAndConditionCheckbox = value!;
-                      });
-                    },
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: const Text(
-                      "I agree to the terms and conditions \n regarding complaint registration.",
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 13,
+              Container(
+                child: Row(
+                  children: <Widget>[
+                    Checkbox(
+                      value: termsAndConditionCheckbox,
+                      onChanged: (value) {
+                        setState(() {
+                          termsAndConditionCheckbox = value!;
+                        });
+                      },
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: const Text(
+                        "I agree to the terms and conditions regarding complaint registration.",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0, left: 20),
@@ -170,7 +173,7 @@ class _ComplaintRegisterScreen extends State<ComplaintRegisterScreen> {
                     onPressed: termsAndConditionCheckbox == true ? () {} : null,
                     child: const Text(
                       "Submit",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold ),
                     ),
                   ),
                 ),

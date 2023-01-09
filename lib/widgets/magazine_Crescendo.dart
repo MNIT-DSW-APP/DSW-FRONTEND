@@ -13,8 +13,8 @@ class MagzineCardCrescendo extends StatelessWidget {
     return Card(
       margin: EdgeInsets.all(width*0.05),
       child: Container(
-        width: sz.width*0.535,
-        height: sz.height*0.52,
+        width:220 ,
+        height:365,
         child: Stack(
           children: [
             Positioned(
@@ -48,24 +48,27 @@ class MagzineCardCrescendo extends StatelessWidget {
             ),
 
             Positioned(
-              top: 310,
-              left: 10,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  side: const BorderSide(
-                      width: 1.0,
-                      color: Colors.orange,
-                  ),
-                    primary: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
-                onPressed: () {
+                top: 310,
+                left: 10,
+                child:
+                InkWell(
+                  child:  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        side: const BorderSide(
+                          width: 1.0,
+                          color: Colors.orange,
+                        ),
+                        primary: Colors.white,
+                        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 9)),
+                    onPressed: () {
 
-                },
-                child: Text(
-                  "Read Here",
-                  style: TextStyle(fontSize: 10,color: Colors.orange,fontWeight:FontWeight.w400),
-                ),
-              ),
+                    },
+                    child: Text(
+                      "Read Here",
+                      style: TextStyle(fontSize: 10,color: Colors.orange,fontWeight:FontWeight.w400),
+                    ),
+                  ),
+                )
             ),
 
 

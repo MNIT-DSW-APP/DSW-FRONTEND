@@ -9,7 +9,6 @@ import 'package:dswapp/widgets/navigation_drawer.dart';
 import 'package:dswapp/widgets/tasks_card.dart';
 import 'package:flutter/material.dart';
 import '../constants/global_variables.dart';
-import '../widgets/upcoming_events_slider.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);

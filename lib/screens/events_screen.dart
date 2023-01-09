@@ -1,4 +1,5 @@
 import 'package:dswapp/models/event.dart';
+import 'package:dswapp/screens/category_filter_model.dart';
 import 'package:dswapp/widgets/custom_appbar.dart';
 import 'package:dswapp/widgets/event_card.dart';
 import 'package:dswapp/widgets/navigation_drawer.dart';
@@ -52,11 +53,17 @@ class EventsScreen extends StatelessWidget {
                 color: GlobalVariables.customYellow,
                 size: sz.width * 0.081,
               ),
-              Icon(
-                Icons.filter_alt,
-                color: GlobalVariables.customYellow,
-                size: sz.width * 0.081,
-              ),
+              GestureDetector(
+                onTap: () =>
+                    Navigator.of(context).pushNamed(FilterScreen.routeName),
+                child: Container(
+                  child:Icon(
+                    Icons.filter_alt,
+                    color: GlobalVariables.customYellow,
+                    size: sz.width * 0.081,
+                  ),
+                ),
+              )
             ],
           ),
           const SizedBox(

@@ -3,10 +3,38 @@ import 'package:dswapp/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Footer extends StatelessWidget {
+class Footer extends StatefulWidget {
   const Footer({Key? key}) : super(key: key);
 
+  @override
+  State<Footer> createState() => _FooterState();
+}
+
+class _FooterState extends State<Footer> {
   final Color yel = GlobalVariables.customYellow;
+
+  final ScrollController _scrollController = ScrollController();
+  bool showbtn = false;
+
+  @override
+  void initState() {
+    _scrollController.addListener(() { //scroll listener
+      double showoffset = 10.0; //Back to top botton will show on scroll offset 10.0
+
+      if(_scrollController.offset > showoffset){
+        showbtn = true;
+        setState(() {
+          //update state
+        });
+      }else{
+        showbtn = false;
+        setState(() {
+          //update state
+        });
+      }
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -178,13 +206,20 @@ class Footer extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 15,
-          ),
-          FloatingActionButton(
-            onPressed: (() {}),
-            child: const Icon(Icons.arrow_upward_outlined),
-          ),
+
+          // const SizedBox(
+          //   height: 15,
+          // ),
+          // FloatingActionButton(
+          //   onPressed: () {
+          //     _scrollController.animateTo(
+          //         0,
+          //         duration: const Duration(milliseconds: 500),
+          //         curve: Curves.fastOutSlowIn);
+          //   },
+          //   child: const Icon(Icons.arrow_upward_outlined),
+          // ),
+
         ],
       ),
     );
