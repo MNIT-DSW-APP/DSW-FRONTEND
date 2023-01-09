@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:dswapp/constants/global_variables.dart';
 import 'package:dswapp/screens/user/user_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../widgets/custom_appbar.dart';
 import '../widgets/navigation_drawer.dart';
@@ -21,6 +24,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _dobController = TextEditingController();
   final _branchController = TextEditingController();
   final _contactnoController = TextEditingController();
+
+  File? _storedImage;
+
+  @override
+  void dispose() {
+    super.dispose();
+    _nameController.dispose();
+    _branchController.dispose();
+    _contactnoController.dispose();
+    _dobController.dispose();
+    _idController.dispose();
+    _passwordController.dispose();
+    _emailController.dispose();
+  }
+
   List<Step> stepList(Size sz) => [
         Step(
           title: const Text('Account'),
@@ -30,7 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           isActive: _activeStepIndex >= 0,
         ),
         Step(
-          title: Text('Details'),
+          title: const Text('Details'),
           content: DetailsContent(
             branchController: _branchController,
             contactnoController: _contactnoController,
@@ -41,7 +59,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           isActive: _activeStepIndex >= 1,
         ),
         Step(
-            title: Text('Confirm'),
+            title: const Text('Confirm'),
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -91,6 +109,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 _activeStepIndex <= 2 ? StepState.editing : StepState.complete),
       ];
 
+  bool verifyEmail(String email) {
+    var isValid = email.toLowerCase().endsWith('@mnit.ac.in');
+    if (!isValid) return false;
+    return true;
+  }
+
   Container accountContent(
       Size sz,
       TextEditingController namecontroller,
@@ -102,13 +126,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
         SizedBox(
           height: sz.height * 0.05,
         ),
-        CircleAvatar(
-          radius: 60,
-          backgroundImage: const AssetImage('lib/assets/images/user.jpg'),
-          backgroundColor: Colors.grey[500],
-          child: const Text(
-            'Add profile photo',
-            textAlign: TextAlign.center,
+        GestureDetector(
+          onTap: _takePicture,
+          child: Container(
+            height: 200,
+            width: 200,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 2,
+                color: Colors.grey,
+              ),
+            ),
+            child: _storedImage == null
+                ? const Text(
+                    "Add profile photo",
+                    textAlign: TextAlign.center,
+                  )
+                : Image.file(
+                    _storedImage!,
+                    fit: BoxFit.cover,
+                  ),
           ),
         ),
         SizedBox(
@@ -128,13 +166,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
         const SizedBox(
           height: 20,
         ),
-        CustomTextField(txt: 'MNIT Email', controller: emailcontroller),
+        CustomTextField(
+          txt: 'MNIT Email',
+          controller: emailcontroller,
+        )
       ]),
     );
   }
 
   int _activeStepIndex = 0;
   final _formkey = GlobalKey<FormState>();
+
+  Future<void> _takePicture() async {
+    final imagefile = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 600,
+    );
+    setState(() {
+      _storedImage = File(imagefile!.path);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size sz = MediaQuery.of(context).size;
@@ -164,8 +216,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 primary: GlobalVariables.customYellow,
               )),
               child: Stepper(
+                physics: const ClampingScrollPhysics(),
                 currentStep: _activeStepIndex,
-                type: StepperType.horizontal,
+                onStepTapped: (value) {
+                  _formkey.currentState!.validate();
+                },
                 steps: stepList(sz),
                 onStepContinue: () {
                   if (_activeStepIndex < stepList(sz).length - 1) {
@@ -224,6 +279,7 @@ class DetailsContent extends StatelessWidget {
   final TextEditingController branchController;
   final TextEditingController contactnoController;
   final TextEditingController dobController;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -277,7 +333,7 @@ class CustomTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
         color: Colors.white,
       ),
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         decoration: InputDecoration(
           // hintText: hinttext,
@@ -290,6 +346,11 @@ class CustomTextField extends StatelessWidget {
           ),
           label: Text(txt),
         ),
+        validator: (value) {
+          if (txt.isEmpty) return 'This field cannot be empty';
+          return null;
+        },
+        keyboardType: TextInputType.emailAddress,
       ),
     );
   }

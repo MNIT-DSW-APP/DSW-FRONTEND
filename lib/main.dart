@@ -67,8 +67,8 @@ class MyApp extends StatelessWidget {
             textTheme: const TextTheme(
                 bodyText1: TextStyle(
               color: GlobalVariables.customGrey,
-              fontSize: 20,
-              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              fontWeight: FontWeight.w200,
             ))),
         home: SignUpScreen(),
         routes: {
