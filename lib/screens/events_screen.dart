@@ -12,23 +12,26 @@ class EventsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sz = MediaQuery.of(context).size;
+    final currScaleFactor = MediaQuery.of(context).textScaleFactor;
     return SafeArea(
         child: Scaffold(
       appBar: const CustomAppBar(),
       endDrawer: NavigationDrawer(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
+        padding: EdgeInsets.only(
+            top: 30, left: sz.width * 0.0697, right: sz.width * 0.0697),
         child: Column(children: [
           Row(
             children: [
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   children: [
                     TextSpan(
                       text: "MNITJ ",
                       style: TextStyle(
                         color: GlobalVariables.customGrey,
-                        fontSize: 37,
+                        fontSize: 37 * currScaleFactor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -36,7 +39,7 @@ class EventsScreen extends StatelessWidget {
                       text: "Events",
                       style: TextStyle(
                         color: GlobalVariables.customYellow,
-                        fontSize: 37,
+                        fontSize: 37 * currScaleFactor,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -44,15 +47,15 @@ class EventsScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const Icon(
+              Icon(
                 Icons.search,
                 color: GlobalVariables.customYellow,
-                size: 35,
+                size: sz.width * 0.081,
               ),
-              const Icon(
+              Icon(
                 Icons.filter_alt,
                 color: GlobalVariables.customYellow,
-                size: 35,
+                size: sz.width * 0.081,
               ),
             ],
           ),
