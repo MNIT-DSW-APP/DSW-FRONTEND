@@ -32,7 +32,10 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Title",
-                      labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
+                      labelStyle: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
                       hintText: "Enter Title...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -62,7 +65,10 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                     keyboardType: TextInputType.multiline,
                     decoration: const InputDecoration(
                       labelText: "Description",
-                      labelStyle: TextStyle(fontSize: 20,color: Colors.black, fontWeight: FontWeight.bold),
+                      labelStyle: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
                       hintText: "Enter description...",
                       hintStyle: TextStyle(
                         color: Colors.grey,
@@ -91,7 +97,7 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                   children: [
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.grey.shade100,
+                            primary: Colors.grey.shade100,
                             padding: EdgeInsets.zero,
                             elevation: 5),
                         onPressed: () {},
@@ -101,7 +107,8 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                             leading: SizedBox(
                               height: 40,
                               width: 40,
-                              child: Image.asset("lib/assets/images/upload_image.jpg"),
+                              child: Image.asset(
+                                  "lib/assets/images/upload_image.jpg"),
                             ),
                             title: TextButton(
                               child: const Text(
@@ -109,8 +116,14 @@ class _LostAndFoundRegisterScreen extends State<LostAndFoundRegisterScreen> {
                                 style: TextStyle(fontSize: 15),
                               ),
                               onPressed: () async {
-                                final result = await FilePicker.platform.pickFiles(
-                                  allowedExtensions: ["png", "jpeg", "jpg", "svg"],
+                                final result =
+                                    await FilePicker.platform.pickFiles(
+                                  allowedExtensions: [
+                                    "png",
+                                    "jpeg",
+                                    "jpg",
+                                    "svg"
+                                  ],
                                   type: FileType.custom,
                                 );
                                 if (result != null) {
